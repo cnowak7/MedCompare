@@ -24,7 +24,13 @@ li{
 	font-size: 25px;
 	}
 	
- .frontpage{
+.search {
+	z-index: 1;
+	top: 10.8%;
+	position: fixed;
+	margin-left: 75%;         
+}
+.frontpage{
 	font-size: 25px;
 	font-family: "Helvetica";
 	}
@@ -42,7 +48,7 @@ li{
 
 .nav {
 	float: right;
-	margin-right: 20%;
+	margin-right: 15%;
 	padding-top: 50px;
 	}
 
@@ -58,7 +64,7 @@ li{
 #banner {
 	height: 500px;
 	position: fixed;
-	top: 100px;
+	top: 130px;
 	background-size: cover;
 	}
 	
