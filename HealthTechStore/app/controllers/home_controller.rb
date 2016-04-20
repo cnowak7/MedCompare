@@ -7,4 +7,9 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def catalog
+  	@products = Product.all
+  end
+
 end
