@@ -27,7 +27,6 @@ li{
 .search {
 	z-index: 1;
 	top: 10.8%;
-	position: fixed;
 	margin-left: 75%;         
 }
 .frontpage{
@@ -55,10 +54,9 @@ li{
  #header {
 	height: 100px;
 	background: #dbdbdb;
-	width: 90%;
 	z-index: 10;
 	top: 0;
-	position: fixed;
+	margin: auto;
 	}
 
 #adminSection {
