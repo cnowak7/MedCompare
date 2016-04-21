@@ -16,67 +16,161 @@
  a     {
 	text-decoration: none;
 	}
+	
+	
 li{
 	list-style: none;
 	float: left;
 	margin-left: 15px;
-	padding-top 50px;
 	font-size: 25px;
+	
+	}
+	
+.products_page {
+	width: 90%;
+	position: fixed;
+	top: 18%;
+	height: auto;
+	padding: 15px;
 	}
 	
 .search {
-	z-index: 1;
-	top: 10.8%;
+	top: 5.5%;
 	position: fixed;
-	margin-left: 75%;         
+	margin-left: 25%;         
 }
-.frontpage{
-	font-size: 25px;
-	font-family: "Helvetica";
+
+#box  {
+	width: 300%;
+	border-radius: 15px/30px;
+	box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	background-image: url('search_icon.png');
+    background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
 	}
 	
-.container{
-	width: 960px;
-	margin: 0 auto;
+.content{
+	font-size: 25px;
+	font-family: "Helvetica";
+	width: 90%;
+	position: fixed;
+	top: 20%;
+	height: auto;
+	padding: 15px;
 	}
 	
 .logo {
 	float: left;
-	margin-left: 5%;
+	margin-left: 0%;
 
 	}
 
 .nav {
-	float: right;
-	margin-right: 15%;
-	padding-top: 50px;
+	position: fixed;
+	margin-right: 12%;
+	top: 11%;
+	
+	}
+	
+.nav a:link, a:visited {
+	background-color: white;
+    color: grey;
+    padding: 14px 0px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+.About_page
+	{
+	width: 90%;
+	position: fixed;
+	top: 18%;
+	height: auto;
+	padding: 15px;
+	}
+	
+.Catalog_page
+	{
+	width: 90%;
+	position: fixed;
+	top: 18%;
+	height: auto;
+	padding: 15px;
 	}
 
+.Contact_page
+	{
+	width: 90%;
+	position: fixed;
+	top: 18%;
+	height: auto;
+	padding: 15px;
+	}
+
+.login
+	{
+	position: fixed;
+	margin-left: 73%;
+	top: 11%;
+	
+	background-color: white;
+    color: grey;
+    padding: 14px 0px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+	}
+	
+.sign_up
+	{
+	position: absolute;
+	margin-left: 80%;
+	top: 10%;
+	
+	border-radius: 15px 50px 30px;
+    background: #F9B44F ;
+	padding: 10px; 
+    width: 150px;
+    height: auto; 
+	}
+	
  #header {
 	height: 100px;
-	background: #dbdbdb;
+	background: white;
 	width: 90%;
 	z-index: 10;
 	top: 0;
 	position: fixed;
+	
+	border-radius: 50px/15px;
+    padding: 20px; 
+
 	}
 
-#adminSection {
+.adminSection {
 	background-color:lightGrey;
-}
-	
-#banner {
-	height: 500px;
-	position: fixed;
-	top: 130px;
-	background-size: cover;
-	}
-	
-#content {
 	width: 100%;
+	top: 60%;
 	position: relative;
-	top: 600px;
-	background: #ebebeb;
-	height: auto;
-	padding: 15px;
+	color: grey;
+    padding: 14px 0px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+	
+#footer {
+	height:100px;
+	position: fixed;
+	top: 90%;
+	width: 90%;
 	}
+	

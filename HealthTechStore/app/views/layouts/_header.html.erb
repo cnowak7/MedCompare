@@ -2,19 +2,26 @@
 	<div class="logo">
 	<h1><%= link_to (image_tag "storeLogo - small.png"), home_index_path %></h1>
 	</div>
-	<div class="nav">
-		<ul>
+	<div class="search">
+		<input type="text" name="search" id="box" placeholder="Enter Keyword Here.."/>
+	</div>
+	<table class="nav">
+		<td><ul>
 			<li><%= link_to "About Us", home_about_path %></li>
 			<li><%= link_to "Contact Us", home_contact_path %></li>
 			<li><%= link_to "Catalog", home_catalog_path %></li>
-		</ul>
-	</div>
-	<div class="search">
-		<input type="text" name="search" placeholder="Enter Keyword Here.."/>
-		<input type="submit" value="Search"/>
-	</div>
-	<table class="table" id="adminSection">
-		<td><%= link_to "Products", products_path %>  </td>
+		</ul></td>
+	</table>
+	<table class="login">
+		<td><ul>
+			<li>Login</li>
+			<li class="sign_up">Sign up</li>
+		</ul></td>
+	</table>
+	<table class="adminSection">
+		<td><ul>
+			<li><%= link_to "Products", products_path %></li>
+		</ul></td>
 	</table>
 </div>
 
