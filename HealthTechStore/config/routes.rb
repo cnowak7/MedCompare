@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get 'home/catalog'
 
+  get 'home/productSearch'
+
+  post 'home/productSearch'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
