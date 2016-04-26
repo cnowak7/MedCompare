@@ -7,4 +7,12 @@ class Product < ActiveRecord::Base
 	validates :vendorId, presence: true
 	validates :purchasePrice, presence: true, numericality: true
 	validates :quantityOnHand, presence: true, numericality: true
+
+	def price
+		if self.salePrice.present?
+			self.salePrice
+		else
+			self.purchasePrice
+		end
+	end
 end

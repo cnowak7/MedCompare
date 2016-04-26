@@ -19,7 +19,8 @@ class HomeController < ApplicationController
       @results = 1
       @searchInput = params[:searchInput]
       @searchCriteria = "%#{params[:searchInput]}%"
-      @productList = Product.where("description like ? or name like ?", @searchCriteria, @searchCriteria)
+      # @productList = Product.where("description like ? or name like ?", @searchCriteria, @searchCriteria)
+      @productList = Product.where("description like :search or name like :search", search: @searchCriteria)
     end
   end
 

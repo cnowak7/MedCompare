@@ -1,6 +1,4 @@
-
 <div class="Catalog_page">
-<br>
 <h1>Our Catalog </h1>
 
 	
@@ -26,7 +24,7 @@
 			<td><%= product.name %></td>
 			<td><%= image_tag product.image, size: "400x200" %> </td>
 			<td><%= product.description %> </td>
-			<td><%= number_to_currency(product.salePrice) %> </td>
+			<td><%= number_to_currency(product.price) %> </td>
 		</tr>
 	<%end%>
 </table>
