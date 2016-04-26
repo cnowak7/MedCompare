@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :manufactures
+  resources :clinicals
+  resources :clinicals
   resources :suppliers
   resources :products
   get 'home/index'

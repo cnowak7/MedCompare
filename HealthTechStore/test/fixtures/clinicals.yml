@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ClinicalID: MyString
+  Clinical: MyString
+  Name: MyString
+  Clinical: MyString
+  Email: MyString
+  Clinical: MyString
+  Phone: MyString
+  Number: 1
+  Clinical: MyString
+  Rating: 9.99
+
+two:
+  ClinicalID: MyString
+  Clinical: MyString
+  Name: MyString
+  Clinical: MyString
+  Email: MyString
+  Clinical: MyString
+  Phone: MyString
+  Number: 1
+  Clinical: MyString
+  Rating: 9.99

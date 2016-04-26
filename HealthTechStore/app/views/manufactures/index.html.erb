@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Manufactures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Manufactureid</th>
+      <th>Manufacture</th>
+      <th>Name</th>
+      <th>Manufacture</th>
+      <th>Email</th>
+      <th>Mnaufacture</th>
+      <th>Phone</th>
+      <th>Number</th>
+      <th>Manufacture</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manufactures.each do |manufacture| %>
+      <tr>
+        <td><%= manufacture.ManufactureID %></td>
+        <td><%= manufacture.Manufacture %></td>
+        <td><%= manufacture.Name %></td>
+        <td><%= manufacture.Manufacture %></td>
+        <td><%= manufacture.Email %></td>
+        <td><%= manufacture.Mnaufacture %></td>
+        <td><%= manufacture.Phone %></td>
+        <td><%= manufacture.Number %></td>
+        <td><%= manufacture.Manufacture %></td>
+        <td><%= manufacture.Location %></td>
+        <td><%= link_to 'Show', manufacture %></td>
+        <td><%= link_to 'Edit', edit_manufacture_path(manufacture) %></td>
+        <td><%= link_to 'Destroy', manufacture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manufacture', new_manufacture_path %>
