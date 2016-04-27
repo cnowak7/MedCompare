@@ -18,7 +18,7 @@ class ProductsControllerTest < ActionController::TestCase
 
   test "should create product" do
     assert_difference('Product.count') do
-      post :create, product: { categoryId: @product.categoryId, description: @product.description, image: @product.image, manufacturerId: @product.manufacturerId, name: @product.name, purchasePrice: @product.purchasePrice, quantityOnHand: @product.quantityOnHand, salePrice: @product.salePrice, vendorId: @product.vendorId }
+      post :create, product: { category_id: @product.category_id, description: @product.description, image: @product.image, manufacturer_id: @product.manufacturer_id, name: @product.name, purchase_price: @product.purchase_price, quantity_on_hand: @product.quantity_on_hand, sale_price: @product.sale_price, vendor_id: @product.vendor_id }
     end
 
     assert_redirected_to product_path(assigns(:product))
@@ -35,7 +35,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should update product" do
-    patch :update, id: @product, product: { categoryId: @product.categoryId, description: @product.description, image: @product.image, manufacturerId: @product.manufacturerId, name: @product.name, purchasePrice: @product.purchasePrice, quantityOnHand: @product.quantityOnHand, salePrice: @product.salePrice, vendorId: @product.vendorId }
+    patch :update, id: @product, product: { category_id: @product.category_id, description: @product.description, image: @product.image, manufacturer_id: @product.manufacturer_id, name: @product.name, purchase_price: @product.purchase_price, quantity_on_hand: @product.quantity_on_hand, sale_price: @product.sale_price, vendor_id: @product.vendor_id }
     assert_redirected_to product_path(assigns(:product))
   end
 

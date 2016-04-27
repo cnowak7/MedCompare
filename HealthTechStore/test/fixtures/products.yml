@@ -3,21 +3,21 @@
 one:
   name: MyString
   image: MyString
-  description: MyText
-  categoryId: 1
-  manufacturerId: 1
-  vendorId: 1
-  salePrice: 1.5
-  purchasePrice: 1.5
-  quantityOnHand: 1
+  description: MyString
+  category_id: 1
+  vendor_id: 1
+  manufacturer_id: 1
+  sale_price: 1.5
+  purchase_price: 1.5
+  quantity_on_hand: 1
 
 two:
   name: MyString
   image: MyString
-  description: MyText
-  categoryId: 1
-  manufacturerId: 1
-  vendorId: 1
-  salePrice: 1.5
-  purchasePrice: 1.5
-  quantityOnHand: 1
+  description: MyString
+  category_id: 1
+  vendor_id: 1
+  manufacturer_id: 1
+  sale_price: 1.5
+  purchase_price: 1.5
+  quantity_on_hand: 1

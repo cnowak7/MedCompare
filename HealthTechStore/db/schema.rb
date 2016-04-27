@@ -11,54 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426204813) do
+ActiveRecord::Schema.define(version: 20160427011323) do
 
-  create_table "clinicals", force: :cascade do |t|
-    t.string   "ClinicalID"
-    t.string   "Clinical"
-    t.string   "Name"
-    t.string   "Email"
-    t.string   "Phone"
-    t.integer  "Number"
-    t.decimal  "Rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "clinics", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.integer  "rating"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table "manufactures", force: :cascade do |t|
-    t.integer  "ManufactureID"
-    t.string   "Manufacture"
-    t.string   "Name"
-    t.string   "Email"
-    t.string   "Mnaufacture"
-    t.string   "Phone"
-    t.integer  "Number"
-    t.string   "Location"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "manufacturers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
-    t.text     "description"
-    t.integer  "categoryId"
-    t.integer  "manufacturerId"
-    t.integer  "vendorId"
-    t.float    "salePrice"
-    t.float    "purchasePrice"
-    t.integer  "quantityOnHand"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "description"
+    t.integer  "category_id"
+    t.integer  "vendor_id"
+    t.integer  "manufacturer_id"
+    t.float    "sale_price"
+    t.float    "purchase_price"
+    t.integer  "quantity_on_hand"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  create_table "suppliers", force: :cascade do |t|
-    t.string   "companyName"
-    t.string   "pointOfContact"
-    t.string   "website"
-    t.string   "phone"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "vendors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

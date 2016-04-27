@@ -1,90 +1,53 @@
-<%= form_for @product, :html => { :class => "form-horizontal product" } do |f| %>
-
+<%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @product.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :name, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:name) %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
-  <div class="form-group">
-    <%= f.label :image, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :image, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:image) %>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
   </div>
-  <div class="form-group">
-    <%= f.label :description, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :description, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:description) %>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
   </div>
-  <div class="form-group">
-    <%= f.label :categoryId, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :categoryId, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:categoryId) %>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
   </div>
-  <div class="form-group">
-    <%= f.label :manufacturerId, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :manufacturerId, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:manufacturerId) %>
+  <div class="field">
+    <%= f.label :vendor_id %><br>
+    <%= f.number_field :vendor_id %>
   </div>
-  <div class="form-group">
-    <%= f.label :vendorId, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :vendorId, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:vendorId) %>
+  <div class="field">
+    <%= f.label :manufacturer_id %><br>
+    <%= f.number_field :manufacturer_id %>
   </div>
-  <div class="form-group">
-    <%= f.label :salePrice, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :salePrice, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:salePrice) %>
+  <div class="field">
+    <%= f.label :sale_price %><br>
+    <%= f.text_field :sale_price %>
   </div>
-  <div class="form-group">
-    <%= f.label :purchasePrice, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :purchasePrice, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:purchasePrice) %>
+  <div class="field">
+    <%= f.label :purchase_price %><br>
+    <%= f.text_field :purchase_price %>
   </div>
-  <div class="form-group">
-    <%= f.label :quantityOnHand, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :quantityOnHand, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:quantityOnHand) %>
+  <div class="field">
+    <%= f.label :quantity_on_hand %><br>
+    <%= f.number_field :quantity_on_hand %>
   </div>
-
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                products_path, :class => 'btn btn-default' %>
-    </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
-
 <% end %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :manufacturers
+  resources :vendors
+  resources :clinics
+  resources :products
   resources :manufactures
   resources :clinicals
   resources :clinicals

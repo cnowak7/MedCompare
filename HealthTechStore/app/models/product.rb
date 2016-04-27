@@ -2,17 +2,17 @@ class Product < ActiveRecord::Base
 	validates :name, presence: true
 	validates :image, presence: true
 	validates :description, presence: true
-	validates :categoryId, presence: true
-	validates :manufacturerId, presence: true
-	validates :vendorId, presence: true
-	validates :purchasePrice, presence: true, numericality: true
-	validates :quantityOnHand, presence: true, numericality: true
+	validates :category_id, presence: true
+	validates :manufacturer_id, presence: true
+	validates :vendor_id, presence: true
+	validates :purchase_price, presence: true, numericality: true
+	validates :quantity_on_hand, presence: true, numericality: true
 
 	def price
-		if self.salePrice.present?
-			self.salePrice
+		if self.sale_price.present?
+			return self.sale_price
 		else
-			self.purchasePrice
+			return self.purchase_price
 		end
 	end
 end
