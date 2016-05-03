@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
 	validates :purchase_price, presence: true, numericality: true
 	validates :quantity_on_hand, presence: true, numericality: true
 
+	belongs_to :category
+
 	def price
 		if self.sale_price.present?
 			return self.sale_price
