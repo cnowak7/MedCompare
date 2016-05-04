@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20160503075926) do
 
   create_table "vendors", force: :cascade do |t|
     t.string   "name"
+    t.string   "image"
+    t.text     "description"
     t.string   "email"
     t.string   "phone_number"
     t.datetime "created_at",   null: false

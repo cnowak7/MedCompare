@@ -17,3 +17,23 @@
 
 <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
 <%= link_to 'Back', vendors_path %>
+
+<h2> Products By <%= @vendor.name %> </h2>
+
+<table border=1>
+  <tr>
+    <th>Product Name</th>
+    <th>Image</th>
+    <th>Description</th>
+    <th>Sale Price</th>
+  </tr>
+  
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= image_tag product.image, size: "400x200" %> </td>
+      <td><%= product.description %> </td>
+      <td><%= number_to_currency(product.price) %> </td>
+    </tr>
+  <%end%>
+</table>

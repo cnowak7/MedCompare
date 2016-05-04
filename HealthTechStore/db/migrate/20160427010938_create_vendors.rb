@@ -2,6 +2,8 @@ class CreateVendors < ActiveRecord::Migration
   def change
     create_table :vendors do |t|
       t.string :name
+      t.string :image
+      t.text :description
       t.string :email
       t.string :phone_number
 

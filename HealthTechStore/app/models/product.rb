@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
 	validates :quantity_on_hand, presence: true, numericality: true
 
 	belongs_to :category
+	belongs_to :vendor
 
 	def price
 		if self.sale_price.present?
