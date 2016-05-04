@@ -1,31 +1,25 @@
-<div id="header">
+<div class="header_container">
 	<div class="logo">
 	<h1><%= link_to (image_tag "storeLogo - small.png"), home_index_path %></h1>
 	</div>
-	<div class="search">
+
+	<div class="searchbox">
 		<input type="text" name="search" id="box" placeholder="Enter Keyword Here.."/>
 	</div>
-	<table class="nav">
-		<td><ul>
-			<li><%= link_to "About Us", home_about_path %></li>
-			<li><%= link_to "Contact Us", home_contact_path %></li>
-			<li><%= link_to "Catalog", home_catalog_path %></li>
-		</ul></td>
-	</table>
-	<table class="login">
-		<td><ul>
-			<li>Login</li>
-		</ul></td>
-	</table>
-	<table class="sign_up">
-		<td><ul>
-			<li>Sign up</li>
-		</ul></td>
-	</table>
-	<table class="adminSection">
-		<td><ul>
-			<li><%= link_to "Products", products_path %></li>
-		</ul></td>
-	</table>
+	<ul class="navigation">
+		<li><%= link_to "Home", home_index_path %>
+		<li><%= link_to "About Us", home_about_path %></li>
+		<li><%= link_to "Contact Us", home_contact_path %></li>
+		<li><%= link_to "Catalog", home_catalog_path %></li>
+	</ul>
+
+	<ul class="login">
+			<li><%= link_to "Login", home_catalog_path %></li>
+			<li><%= link_to "Sign up", home_catalog_path %></li>
+	</ul>
+
+	<ul class="adminSection">
+		<li><%= link_to "Products", products_path %></li>
+	</ul>
 </div>
 

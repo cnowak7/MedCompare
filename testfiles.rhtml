@@ -1,0 +1,125 @@
+	<table bgcolor='white' width='90%'>
+   		<tr><td><%= render "layouts/header" %></td></tr>
+   		<tr><td><%= yield %></td></tr>
+   		<tr><td><%= render "layouts/footer" %></td> </tr>
+	</table>
+
+
+	Navigation
+	.nav {
+	position: fixed;
+	top: 11%;
+	left: 5%;
+	background-color: #333;
+	width: 90%;
+	
+	}
+	
+.nav a:link {
+	background-color: #333;
+    color: white;
+    padding: 14px 12px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav a:visited {
+	background-color: #333;
+    color: white;
+}
+
+.nav a:hover {
+	background-color: #111;
+	}
+
+.nav ul {
+	list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+	}
+	
+.nav li {
+	display: block;
+    color: white;
+    text-align: center;
+	}
+
+
+li{
+	text-decoration: none;
+	list-style: none;
+	font-size: 20px;
+	float: left;
+	
+	}
+
+Login/signup
+.login
+	{
+	position: fixed;
+	margin-left: 50%;
+	top: 11%;
+	
+	background-color: #333;
+    color: white;
+    padding: 14px 0px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+	}
+	
+.sign_up
+	{
+	border-radius: 15px 50px;
+	position: fixed;
+	margin-left: 78%;
+	top: 12%;
+	color: black;
+	
+    background: #94B3FF  ;
+	padding: 10px; 
+    width: 150px;
+    height: 30px; 
+	float: center;
+	
+	}
+
+Admin
+#header {
+	height: 105px;
+	background: white;
+    width: 90%;
+	top: 0;
+	position: fixed;
+
+    padding: 20px; 
+	background: #dbdbdb;
+	z-index: 10;
+	top: 0;
+
+	}
+
+.adminSection {
+	background-color:lightGrey;
+	width: 90%;
+	top: 16%;
+	left: 5%;
+	position: fixed;
+	color: grey;
+    padding: 14px 0px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+Footer	
+#footer {
+	height:100px;
+	position: fixed;
+	top: 90%;
+	width: 90%;
+	}
+

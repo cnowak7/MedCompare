@@ -8,13 +8,11 @@
 </head>
 <body>
 
-<center>
-	<table bgcolor='white' width='90%'>
-   		<tr><td><%= render "layouts/header" %></td></tr>
-   		<tr><td> <%= yield %></td></tr>
-   		<tr><td><%= render "layouts/footer" %></td> </tr>
-	</table>
-</center>
+<div class="body_container">
+	<header class="header"><%= render "layouts/header" %></header>
+	<article class="main"><p><%= yield %></p></main>
+	<footer class="footer"><%= render "layouts/footer" %></footer>
+</div>
 
 </body>
 </html>
