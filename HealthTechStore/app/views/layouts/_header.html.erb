@@ -1,26 +1,26 @@
-<div class="header_container">
-	<div class="logo">
-	<h1><%= link_to (image_tag "storeLogo - small.png"), home_index_path %></h1>
+
+	<div class="first_header">
+		<div class="logo">
+		<%= link_to (image_tag "storeLogo - small.png"), home_index_path %>
+		</div>
+
+		<div class="searchbox">
+			<input type="text" name="search" id="box" placeholder="Enter Keyword Here.."/>
+		</div>
 	</div>
 
-	<div class="searchbox">
-		<input type="text" name="search" id="box" placeholder="Enter Keyword Here.."/>
+	<div class="second_header">
+		<%= link_to "Home", home_index_path %>
+		<%= link_to "About Us", home_about_path %>
+		<%= link_to "Contact Us", home_contact_path %>
+		<%= link_to "Catalog", home_catalog_path %>
+		<%= link_to "Login", home_catalog_path %>
+		<%= link_to "Sign up", home_catalog_path %>
 	</div>
-	
-	<ul class="navigation">
-		<li><%= link_to "Home", home_index_path %>
-		<li><%= link_to "About Us", home_about_path %></li>
-		<li><%= link_to "Contact Us", home_contact_path %></li>
-		<li><%= link_to "Catalog", home_catalog_path %></li>
-	</ul>
 
-	<ul class="login">
-			<li><%= link_to "Login", home_catalog_path %></li>
-			<li><%= link_to "Sign up", home_catalog_path %></li>
-	</ul>
 
-	<ul class="adminSection">
-		<li><%= link_to "Products", products_path %></li>
-	</ul>
-</div>
+	<div class="third_header">
+		<%= link_to "Products", products_path %>
+	</div>
+
 
