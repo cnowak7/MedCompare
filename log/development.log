@@ -1068,3 +1068,24 @@ Processing by VendorsController#index as HTML
   Rendered layouts/_header.html.erb (1.8ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 129ms (Views: 123.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-05-10 02:43:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2374.0ms)
+  Rendered layouts/_header.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 2631ms (Views: 2615.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/search_icon.png" for ::1 at 2016-05-10 02:43:49 -0500
+
+
+Started GET "/home/catalog" for ::1 at 2016-05-10 02:43:52 -0500
+Processing by HomeController#catalog as HTML
+  [1m[35mProduct Load (1.6ms)[0m  SELECT "products".* FROM "products"
+  Rendered home/catalog.html.erb within layouts/application (106.9ms)
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 266ms (Views: 251.2ms | ActiveRecord: 2.3ms)
