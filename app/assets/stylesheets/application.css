@@ -97,14 +97,14 @@
 		order: 2;  background: white; flex: 1 0 0;
 }
 
-	.container {
-        margin: 0 auto;
-        width: 80%;
-        background-color: #fff;
-        min-height: 400px;
-      }
+.container {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #fff;
+    min-height: 400px;
+  }
 
-     .slider {
+ .slider {
   width: 100%;
   overflow: hidden;
   height: 300px;

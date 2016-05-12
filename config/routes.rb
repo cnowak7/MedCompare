@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   resources :clinicals
   resources :suppliers
   resources :products
+
+  get "wishList" => "home#wishList", :as => "wishList"
+
+  post "home/updateWishList"
+
   get 'home/index'
 
   get 'home/about'
