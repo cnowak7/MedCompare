@@ -1,23 +1,17 @@
 <div class="Catalog_page">
-<h1>Our Catalog </h1>
 
-
-</div>
-<table border=1>
-	<tr>
-		<th>Product Name</th>
-		<th>Image</th>
-		<th>Description</th>
-		<th>Sale Price</th>
-	</tr>
 	
 	<% @products.each do |product| %>
-		<tr>
-			<td><%= product.name %></td>
-			<td><%= image_tag product.image, size: "400x200" %> </td>
-			<td><%= product.description %> </td>
-			<td><%= number_to_currency(product.price) %> </td>
-		</tr>
+		<div class="product_item">
+			<p>
+			<div class="img"><%= image_tag product.image, size: "200x100" %></div>
+			<h1><%= product.name %></h1>
+			<!--<%= product.description %> -->
+			<%= number_to_currency(product.price) %>
+			<p> <button class="wishlist_button">Add to Wish List</button>
+				<button class="Compare">Compare this Product</button> </p>
+		</div></p>
+
 	<%end%>
-</table>
+
 </div>
