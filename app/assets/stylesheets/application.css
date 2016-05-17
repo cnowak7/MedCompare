@@ -28,7 +28,7 @@
 /* Header in flexbox Container */
 .header { 
 		order: 1; flex: 1 0 100%;
-		background-color: #333;
+		background-color: #063E7A;
 		
 
 }
@@ -37,29 +37,55 @@
 		.first_header{
 			display: flex;
 			flex-direction: row;
-			background-color: lightblue;
+			background-color: #333;
 			justify-content:center;
 	 
 
 		}
 			.logo {
-				padding: 10px;
+				flex-grow: 0;
+			}
+
+			.logo h1 {
+				font-size: 40px;
+				color: white;
 			}
 
 			.searchbox {
-				flex-grow: 1;
+				flex-grow: 3;
 				postion: relative;
 				margin-top: 20px;
 				margin-left: 20px;
 
 			}
 
+			.login_sign
+			{
+				margin-top: 20px;
+				margin-right: 20px;
+				flex-grow: 0;
+				postion: relative;
+			}
+
+				.login_sign
+					a {
+						background-color:  #333;
+						display: inline-block;
+						padding: 15px 20px;
+						color: white;
+					}
+
+				.login_sign
+					a:hover {
+						background: #A0A0A0 ;
+					}
+
 		/* Navigation and Login */
 		.second_header{
-			background-color:  #333;
+			background-color:  #063E7A;
 			list-style: none;
 			text-decoration: none;
-			display: inline-block;
+
 		}
 
 
@@ -214,4 +240,51 @@
 	}
 /* Search bar end*/
 	
-	
+.fadeIn{
+	animation-name: fadeIn;
+	-webkit-animation-name: fadeIn;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes fadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		transform: scale(1.1);	
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}		
+}	

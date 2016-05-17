@@ -1,11 +1,17 @@
 
 	<div class="first_header">
 		<div class="logo">
-		<%= link_to (image_tag "storeLogo - small.png"), home_index_path %>
+		<!-- <%= link_to (image_tag "storeLogo - small.png"), home_index_path %> -->
+		<h1>MedCompare</h1>
 		</div>
 
 		<div class="searchbox">
 			<input type="text" name="search" id="box" placeholder="Enter Keyword Here.."/>
+		</div>
+
+		<div class="login_sign">
+		<%= link_to "Login", home_catalog_path %>
+		<%= link_to "Sign up", home_catalog_path %>
 		</div>
 	</div>
 
@@ -16,8 +22,6 @@
 		<%= link_to "Catalog", home_catalog_path %>
 		<%= link_to "Categories", categories_path %>
 		<%= link_to "Vendors", vendors_path %>
-		<%= link_to "Login", home_catalog_path %>
-		<%= link_to "Sign up", home_catalog_path %>
 	</div>
 
 
