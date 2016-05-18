@@ -17,9 +17,7 @@
 //= require_tree .
 //= require catalog
 
-$(document).ready(function() {
-  $(".product_item").addClass("fadeIn");
-});
+
 
 
 $(document).on('click', '.lightbox', function(){
