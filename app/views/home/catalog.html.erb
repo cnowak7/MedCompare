@@ -1,6 +1,11 @@
-<div class="Catalog_page">
+<!--<div class="catalog_catagory">
+<%= image_tag("xray.jpg", class: "catagory_img")%>
+<%= image_tag("mri.jpg", class: "catagory_img")%>
+<%= image_tag("hearthealth.jpg", class: "catagory_img")%>
+<%= image_tag("ultrasound.jpg", class: "catagory_img")%>
+</div>-->
 
-	
+<div class="Catalog_page">
 	<% @products.each do |product| %>
 		<div class="product_item">
 			<span class="img"><%= image_tag product.image, size: "200x100" %></span>

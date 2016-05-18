@@ -87,3 +87,18 @@ h1 {
 			margin-right:6px;
 			cursor:pointer;
 		}
+
+.catalog_catagory
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.catagory_img
+{
+	max-width: 150px;
+	max-height: 100px;
+}
