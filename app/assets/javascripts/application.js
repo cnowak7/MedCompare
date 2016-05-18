@@ -20,3 +20,25 @@
 $(document).ready(function() {
   $(".product_item").addClass("fadeIn");
 });
+
+
+$(document).on('click', '.lightbox', function(){
+  $('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
+  $('.box').animate({'opacity':'1.00'}, 300, 'linear');
+  $('.backdrop, .box').css('display', 'block');
+});
+
+$(document).on('click', '.close', function(){
+  close_box();
+});
+
+$(document).on('click', '.backdrop', function(){
+  close_box();
+});
+
+function close_box()
+{
+  $('.backdrop, .box').animate({'opacity':'0'}, 300, 'linear', function(){
+    $('.backdrop, .box').css('display', 'none');
+  });
+}
