@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'home/catalog'
 
+  get '/product_info' => 'home#product_info'
+
   get 'home/productSearch'
 
   post 'home/productSearch'

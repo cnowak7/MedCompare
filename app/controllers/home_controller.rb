@@ -29,6 +29,11 @@ class HomeController < ApplicationController
   def wishList
   end
 
+  def product_info
+    @product = Product.find(params[:id])
+    render layout: false
+  end
+
   def updateWishList
     # Get the specific item that needs to be removed
     wishListId = params[:wishListId].to_i;

@@ -42,3 +42,17 @@ function close_box()
     $('.backdrop, .box').css('display', 'none');
   });
 }
+
+$(document).on('click', '.fetch-info', function() {
+	var $input = $(this);
+	$.ajax({
+	type: "GET",
+	url: "/product_info",
+	data: {
+	  id: $input.data("product-id")
+	},
+	success: function(response) {
+	  $("#fetch-result").html(response);
+	}
+	});
+});

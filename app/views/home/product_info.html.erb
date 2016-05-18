@@ -1,0 +1,8 @@
+<!-- @JOSE - All attributes of the product are accesible in this html view. -->
+<!-- If you need to know which attributes to reference, check the schema.rb file in the db folder -->
+<h1> <%= @product.name %> </h1>
+<br>
+<%= image_tag(@product.image, size: "200x100") %>
+<br><br>
+<p> <%= @product.description %> </p>
+<h2> Vendor: <%= @product.vendor.name %> </h2>
