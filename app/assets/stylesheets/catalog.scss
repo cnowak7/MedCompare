@@ -1,0 +1,104 @@
+// Place all the styles related to the Catalog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Flex Box Container for all the products
+.Catalog_page {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+	//Flexbox products
+	.product_item
+		{
+			margin: 20px;
+			padding: 2px;
+			align-content: center;
+			max-width: 210px;
+			//visibility: hidden;
+			// box-shadow: 0px 0px 50px 2px rgba(0,0,0,0.2)
+
+		}
+
+	//Flexbox products hover
+	.product_item:hover 
+		{
+			box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2)
+		}
+
+
+h1 {
+	font-size: 24px;
+}
+
+#button {
+	display: inline-block;
+	background-color: #063E7A;
+	color: white;
+	border: none;
+	padding: 10px ;
+	font-size: 10px;
+	max-width: 200px;
+	max-height: 30px;
+}
+
+.shadow {
+			box-shadow: 0px 0px 50px 2px rgba(0,0,0,0.2)
+		}
+
+.backdrop
+		{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:1000%;
+			height:1000%;
+			background:#000;
+			opacity: .0;
+			filter:alpha(opacity=0);
+			z-index:50;
+			display:none;
+		}
+ 
+ 
+		.box
+		{
+			position:absolute;
+			top:20%;
+			left:30%;
+			width:500px;
+			height:300px;
+			background:#ffffff;
+			z-index:51;
+			padding:10px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			-moz-box-shadow:0px 0px 5px #444444;
+			-webkit-box-shadow:0px 0px 5px #444444;
+			box-shadow:0px 0px 5px #444444;
+			display:none;
+		}
+ 
+		.close
+		{
+			float:right;
+			margin-right:6px;
+			cursor:pointer;
+		}
+
+.catalog_catagory
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.catagory_img
+{
+	max-width: 150px;
+	max-height: 100px;
+}

@@ -5,22 +5,27 @@
 <%= image_tag("ultrasound.jpg", class: "catagory_img")%>
 </div>-->
 
+<!-- Container for the Catalog Content -->
 <div class="Catalog_page">
+	<!-- List all products -->
 	<% @products.each do |product| %>
 		<div class="product_item">
 			<span class="img"><%= image_tag product.image, size: "200x100" %></span>
 			<h1><%= product.name %></h1>
-			<!--<%= product.description %> -->
+			<!--<%= product.description %> Saved  this just incase we needed it-->
 			<%= number_to_currency(product.price) %>
+			<!-- Button that creates light box -->
 			<button class="lightbox" id="button">More Info</button>
 		</div>
 
+
 	<%end%>
-
+	<!-- backdrop is the black background of lightbox -->
 	<div class="backdrop"></div>
+	<!-- the box that we need to plug information to -->
 	<div class="box"><div class="close"></div>
-		I DONT KNOW HOW TO PULL THIS INFORMATION
+		I DON'T KNOW HOW TO PULL THIS INFORMATION FROM DATA BASE
 
-	</div>
+	</div> 
 
 </div>
