@@ -1,5 +1,5 @@
 
-	<div class="first_header">
+	<div class="first_header" >
 		<div class="logo">
 		<!-- <%= link_to (image_tag "storeLogo - small.png"), home_index_path %> -->
 		<h1>MedCompare</h1>
@@ -10,8 +10,13 @@
 		</div>
 
 		<div class="login_sign">
-		<%= link_to "Sign up", new_user_path %> or
-		<%= link_to "Log In", new_session_path %>
+		<% if current_user %>
+			<p style="color:white;">Logged in as <%= current_user.email %>.</p>
+			<%= link_to "Log Out", session_path("current"), method: "delete" %>
+		<% else %>
+			<%= link_to "Sign up", new_user_path %> or
+			<%= link_to "Log In", new_session_path %>
+		<% end %>
 		</div>
 	</div>
 
