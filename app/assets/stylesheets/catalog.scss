@@ -5,6 +5,28 @@
 //Flex Box Container for all the products
 .Catalog_page {
 	display: flex;
+	flex-direction: row;
+
+}
+
+.catalog_filter {
+	display: flex;
+	flex-direction: column;
+	width: 1px;
+	visibility: hidden;
+
+}
+
+.catalog_filter_test {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	visibility: hidden;
+
+}
+
+.catalog_products {
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 

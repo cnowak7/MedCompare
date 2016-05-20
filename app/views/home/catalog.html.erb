@@ -8,6 +8,35 @@
 <!-- Container for the Catalog Content -->
 <div class="Catalog_page">
 	<!-- List all products -->
+	<div class="catalog_filter">
+			<h2>Show results for</h2>
+			<form>
+				<h3> Vendors </h3>
+				<input type="checkbox" name="vendor" value="healthTech_united">HealthTech United<br>
+				<input type="checkbox" name="vendor" value="Tech-For-Health Foundation">Tech-For-Health Foundation<br>
+				<input type="checkbox" name="vendor" value="Aviato">Aviato<br>
+				<input type="checkbox" name="vendor" value="Health-To-The-Tech LLC">Health-To-The-Tech LLC<br>
+			</form>
+			<br>
+			<form>
+				<h3> Ratings </h3>
+				<input type="checkbox" name="ratings" value="5">5<br>
+				<input type="checkbox" name="ratings" value="4">4<br>
+				<input type="checkbox" name="ratings" value="3">3<br>
+				<input type="checkbox" name="ratings" value="2">2<br>
+				<input type="checkbox" name="ratings" value="1">1<br>
+			</form>
+			<br>
+			<form>
+				<h3> Price </h3>
+				<input type="checkbox" name="price" value="under_500">Under $500<br>
+				<input type="checkbox" name="price" value="500-1000">$500 to $1000<br>
+				<input type="checkbox" name="price" value="1000-2000">$1000 to $2000<br>
+				<input type="checkbox" name="price" value="over_2000 ">$2000 & Above<br>
+			</form>
+	</div>
+
+	<div class="catalog_products">
 	<% @products.each do |product| %>
 	    <div class="product_item fadeIn">
 	        <span class="img"><%= image_tag product.image, size: "200x100" %></span>
@@ -23,6 +52,7 @@
 	<!-- the box that we need to plug information to -->
 	<div class="box"><div class="close"></div>
 	   <div id="fetch-result" style="text-align: center"></div>
+	</div>
 	</div>
 
 </div>
