@@ -16,8 +16,15 @@
 //= require turbolinks
 //= require_tree .
 //= require catalog
-
-
+$(document).ready(function() {
+		$(".catagory_img").click(function () {
+			if($(".catalog_filter").hasClass("catalog_filter")){
+				$(".catalog_filter").addClass("catalog_filter_test slideRight");
+				$(".product_item").addClass("slideRight");
+				$(".catalog_filter").removeClass("catalog_filter");
+			}
+		})
+});
 
 $(document).on('click', '.lightbox', function(){
   $('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
@@ -52,14 +59,4 @@ $(document).on('click', '.fetch-info', function() {
 	  $("#fetch-result").html(response);
 	}
 	});
-});
-
-$(document).ready(function() {
-		$(".catagory_img").click(function () {
-			if($(".catalog_filter").hasClass("catalog_filter")){
-				$(".catalog_filter").addClass("catalog_filter_test slideRight");
-				$(".product_item").addClass("slideRight");
-				$(".catalog_filter").removeClass("catalog_filter");
-			}
-		})
 });
