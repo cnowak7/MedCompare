@@ -16,14 +16,12 @@
 //= require turbolinks
 //= require_tree .
 //= require catalog
-$(document).ready(function() {
-		$(".catagory_img").click(function () {
-			if($(".catalog_filter").hasClass("catalog_filter")){
-				$(".catalog_filter").addClass("catalog_filter_test slideRight");
-				$(".product_item").addClass("slideRight");
-				$(".catalog_filter").removeClass("catalog_filter");
-			}
-		})
+
+
+$(document).on('click', '.catagory_img', function(){
+	$(".catalog_filter").addClass("catalog_filter_test slideRight");
+	$(".product_item").addClass("slideRight");
+	$(".catalog_filter").removeClass("catalog_filter");
 });
 
 $(document).on('click', '.lightbox', function(){
