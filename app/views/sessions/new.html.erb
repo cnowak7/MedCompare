@@ -1,15 +1,19 @@
-<p id="alert" style="color:red;" ><%= alert %></p>
-<p id="notice"><%= notice %></p>
-<h1>Log In</h1>
+<div class="login">
+	<div class="form_login">
+	<p id="alert" style="color:red;" ><%= alert %></p>
+	<p id="notice"><%= notice %></p>
+	<h1>Log In</h1>
 
-<%= form_tag sessions_path do %>
-	<div class="field">
-		<%= label_tag :email %><br />
-		<%= text_field_tag :email, params[:email] %>
+	<%= form_tag sessions_path do %>
+		<div class="field">
+			<%= label_tag :email %><br />
+			<%= text_field_tag :email, params[:email] %>
+		</div>
+		<div class="field">
+			<%= label_tag :password %><br />
+			<%= password_field_tag :password %>
+		</div>
+		<div class="actions"><%= submit_tag "Log In" %></div>
+	<% end %>
 	</div>
-	<div class="field">
-		<%= label_tag :password %><br />
-		<%= password_field_tag :password %>
-	</div>
-	<div class="actions"><%= submit_tag "Log In" %></div>
-<% end %>
+</div>

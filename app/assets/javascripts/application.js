@@ -27,7 +27,9 @@ $(document).on('click', '.catagory_img', function(){
 $(document).on('click', '.lightbox', function(){
   $('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
   $('.box').animate({'opacity':'1.00'}, 300, 'linear');
-  $('.backdrop, .box').css('display', 'block');
+  $('.backdrop').css('display', 'block');
+  $('.box').css('display', 'block');
+  
 });
 
 $(document).on('click', '.close', function(){

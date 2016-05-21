@@ -1,4 +1,5 @@
-<div style="margin-left: 50px">
+<div class="signup">
+	<div class="form_signup">
 	<h1>Sign Up</h1>
 
 	<%= form_for @user do |f| %>
@@ -25,7 +26,8 @@
 			<%= f.label :password_confirmation %><br/>
 			<%= f.password_field :password_confirmation %>
 		</div>
-		<div class="actions"><%= f.submit %></div>
+		<div class="actions"><%= f.submit%></div>
 	<% end %>
+	</div>
 </div>
 	

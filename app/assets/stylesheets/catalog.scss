@@ -10,52 +10,55 @@
 }
 
 .catalog_filter {
-	display: flex;
-	flex-direction: column;
-	width: 1px;
-	visibility: hidden;
+	visibility: hidden;  
 
 }
 
 .catalog_filter_test {
 	display: flex;
 	flex-direction: column;
-	width: 40%;
+	width: 30%;
+	height: 700px;
 	visibility: hidden;
+	padding: 10px;
+	background-color: #E2E1E1;
+	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2)
 
 }
 
 .catalog_products {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	margin-left: 2%;
 
 }
 	//Flexbox products
 	.product_item
 		{
-			margin: 20px;
-			padding: 2px;
-			align-content: center;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			margin: 5px;
+			padding: 5px;
 			max-width: 210px;
-			//visibility: hidden;
-			// box-shadow: 0px 0px 50px 2px rgba(0,0,0,0.2)
+			max-height: 280px;
+			box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2)
 
 		}
 
 	//Flexbox products hover
-	.product_item:hover 
-		{
-			box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2)
-		}
+	//.product_item:hover 
+	//	{
+	//		box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2)
+	//	}
 
 
 h1 {
-	font-size: 24px;
+	font-size: 15px;
 }
 
 #button {
-	display: inline-block;
+	display: block;
 	background-color: #063E7A;
 	color: white;
 	border: none;
@@ -74,12 +77,12 @@ h1 {
 			position:absolute;
 			top:0px;
 			left:0px;
-			width:1000%;
-			height:1000%;
+			width:100%;
+			height:100%;
 			background:#000;
 			opacity: .0;
 			filter:alpha(opacity=0);
-			z-index:50;
+			z-index:10;
 			display:none;
 		}
  
@@ -89,10 +92,10 @@ h1 {
 			position:absolute;
 			top:20%;
 			left:30%;
-			width:500px;
-			height:300px;
+			width:300px;
+			height:auto;
 			background:#ffffff;
-			z-index:51;
+			z-index:11;
 			padding:10px;
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
