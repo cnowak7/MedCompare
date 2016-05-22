@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to login_path, notice: "Thank you for signing up!"
+			redirect_to home_catalog_path, notice: "Thank you for signing up!"
 		else
 			render 'new'
 		end
