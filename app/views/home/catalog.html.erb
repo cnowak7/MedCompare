@@ -39,22 +39,22 @@
 	</div>
 
 	<div class="catalog_products">
-	<% @products.each do |product| %>
-	    <div class="product_item fadeIn">
-	        <span class="img"><%= image_tag product.image, size: "200x100" %></span>
-	        <h1><%= product.name %></h1>
-	        <!--<%= product.description %> Saved  this just incase we needed it-->
-	        <%= number_to_currency(product.price) %>
-	        <!-- Button that creates light box -->
-	        <button class="lightbox fetch-info" data-product-id="<%= product.id %>" id="button">More Info</button>
-	    </div>
-	<%end%>
-	<!-- backdrop is the black background of lightbox -->
-	<div class="backdrop"></div>
-	<!-- the box that we need to plug information to -->
-	<div class="box"><div class="close"></div>
-	   <div id="fetch-result" style="text-align: center"></div>
-	</div>
+		<% @products.each do |product| %>
+		    <div class="product_item fadeIn">
+		        <span class="img"><%= image_tag product.image, size: "200x100" %></span>
+		        <h1><%= product.name %></h1>
+		        <!--<%= product.description %> Saved  this just incase we needed it-->
+		        <%= number_to_currency(product.price) %>
+		        <!-- Button that creates light box -->
+		        <button class="lightbox fetch-info" data-product-id="<%= product.id %>" id="button">More Info</button>
+		    </div>
+		<%end%>
+		<!-- backdrop is the black background of lightbox -->
+		<div class="backdrop"></div>
+		<!-- the box that we need to plug information to -->
+		<div class="box"><div class="close"></div>
+		   <div id="fetch-result" style="text-align: center"></div>
+		</div>
 	</div>
 
 </div>

@@ -6,17 +6,19 @@
 		</div>
 
 		<div class="searchbox">
-			<input type="text" name="search" id="box" placeholder="Enter Keyword Here.."/>
+			<%= form_tag controller: "home", action: "productSearch" do %>
+				<%= text_field_tag 'searchInput', nil, id: "box", placeholder: "Search For Products, Categories, Or Vendors..."%>
+			<% end %>
 		</div>
 
 		<div class="login_sign">
-		<% if current_user %>
-			<p style="color:white;">Logged in as <%= current_user.email %>.</p>
-			<%= link_to "Log Out", session_path("current"), method: "delete" %>
-		<% else %>
-			<%= link_to "Sign up", new_user_path %> or
-			<%= link_to "Log In", new_session_path %>
-		<% end %>
+			<% if current_user %>
+				<p style="color:white;">Logged in as <%= current_user.email %>.</p>
+				<%= link_to "Log Out", session_path("current"), method: "delete" %>
+			<% else %>
+				<%= link_to "Sign up", new_user_path %> or
+				<%= link_to "Log In", new_session_path %>
+			<% end %>
 		</div>
 	</div>
 
