@@ -16,13 +16,11 @@ class HomeController < ApplicationController
   end
 
   def productSearch
-    @results = 0
     if !params[:searchInput].nil?
-      @results = 1
       @searchInput = params[:searchInput]
       @searchCriteria = "%#{params[:searchInput]}%"
-      # @productList = Product.where("description like ? or name like ?", @searchCriteria, @searchCriteria)
       @productList = Product.where("description like :search or name like :search", search: @searchCriteria)
+      @vendorList = Vendor.where("description like :search or name like :search", search: @searchCriteria)
     end
   end
 
@@ -31,6 +29,11 @@ class HomeController < ApplicationController
 
   def product_info
     @product = Product.find(params[:id])
+    render layout: false
+  end
+
+  def vendor_info
+    @vendor = Vendor.find(params[:id])
     render layout: false
   end
 

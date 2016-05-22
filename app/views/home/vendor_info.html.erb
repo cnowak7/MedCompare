@@ -1,0 +1,9 @@
+<!-- @JOSE - All attributes of the vendor are accesible in this html view. -->
+<!-- If you need to know which attributes to reference, check the schema.rb file in the db folder -->
+<h1> <%= @vendor.name %> </h1>
+<br>
+<%= image_tag(@vendor.image, size: "200x100") %>
+<br><br>
+<p> <%= @vendor.description %> </p>
+<p> Email: <%= @vendor.email %> </p>
+<p> Phone Number: <%= @vendor.phone_number %> </p>

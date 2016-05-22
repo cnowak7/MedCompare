@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get '/product_info' => 'home#product_info'
 
+  get '/vendor_info' => 'home#vendor_info'
+
   get 'home/productSearch'
 
   post 'home/productSearch'

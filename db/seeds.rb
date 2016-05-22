@@ -32,7 +32,7 @@ Vendor.create(name: "Aviato",
 				phone_number: "333-333-3333")
 Vendor.create(name: "Health-To-The-Tech LLC",
 				image: "vendorImage4.jpg",
-				description: "Buy our health technology so your patients can have the best quality care every time, all the time.",
+				description: "Buy our health technology so your patients can have the best quality care every time, all the time. We specialize in selling top-notch X-Ray and MRI Machine Technology",
 				email: "healthToTheTech@gmail.com",
 				phone_number: "444-444-4444")
 

@@ -24,39 +24,85 @@ $(document).on('click', '.catagory_img', function(){
 	$(".catalog_filter").removeClass("catalog_filter");
 });
 
-$(document).on('click', '.lightbox', function(){
-  $('.backdrop, .box').animate({'opacity':'.50'}, 300, 'linear');
-  $('.box').animate({'opacity':'1.00'}, 300, 'linear');
-  $('.backdrop').css('display', 'block');
-  $('.box').css('display', 'block');
+// PRODUCT LIGHTBOX
+$(document).on('click', '.productLightbox', function(){
+  $('.productBackdrop, .productBox').animate({'opacity':'.50'}, 300, 'linear');
+  $('.productBox').animate({'opacity':'1.00'}, 300, 'linear');
+  $('.productBackdrop').css('display', 'block');
+  $('.productBox').css('display', 'block');
   
 });
 
-$(document).on('click', '.close', function(){
-  close_box();
+$(document).on('click', '.closeProductBox', function(){
+  close_product_box();
 });
 
-$(document).on('click', '.backdrop', function(){
-  close_box();
+$(document).on('click', '.productBackdrop', function(){
+  close_product_box();
 });
 
-function close_box()
+function close_product_box()
 {
-  $('.backdrop, .box').animate({'opacity':'0'}, 300, 'linear', function(){
-    $('.backdrop, .box').css('display', 'none');
+  $('.productBackdrop, .productBox').animate({'opacity':'0'}, 300, 'linear', function(){
+    $('.productBackdrop, .productBox').css('display', 'none');
   });
 }
 
+// VENDOR LIGHTBOX
+$(document).on('click', '.vendorLightbox', function(){
+  $('.vendorBackdrop, .vendorBox').animate({'opacity':'.50'}, 300, 'linear');
+  $('.vendorBox').animate({'opacity':'1.00'}, 300, 'linear');
+  $('.vendorBackdrop').css('display', 'block');
+  $('.vendorBox').css('display', 'block');
+  
+});
+
+$(document).on('click', '.closeVendorBox', function(){
+  close_vendor_box();
+});
+
+$(document).on('click', '.vendorBackdrop', function(){
+  close_vendor_box();
+});
+
+function close_vendor_box()
+{
+  $('.vendorBackdrop, .vendorBox').animate({'opacity':'0'}, 300, 'linear', function(){
+    $('.vendorBackdrop, .vendorBox').css('display', 'none');
+  });
+}
+
+// fetching product info
 $(document).on('click', '.fetch-info', function() {
 	var $input = $(this);
-	$.ajax({
-	type: "GET",
-	url: "/product_info",
-	data: {
-	  id: $input.data("product-id")
-	},
-	success: function(response) {
-	  $("#fetch-result").html(response);
-	}
+		$.ajax({
+		type: "GET",
+		url: "/product_info",
+		data: {
+		  id: $input.data("product-id")
+		},
+		success: function(response) {
+		  $("#fetch-result").html(response);
+		}
 	});
 });
+
+// fetching vendor info
+
+$(document).on("click", ".fetch-vendor-info", function() {
+	var $input = $(this);
+	$.ajax({
+		type: "GET",
+		url: "/vendor_info",
+		data: {
+			id: $input.data("vendor-id")
+		},
+		success: function(response) {
+			$("#fetch-vendor-result").html(response);
+		}
+	});
+});
+
+
+
+
