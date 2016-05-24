@@ -72,8 +72,10 @@ function close_vendor_box()
   });
 }
 
+// AJAX API CALLS
+
 // fetching product info
-$(document).on('click', '.fetch-info', function() {
+$(document).on('click', '.fetch-product-info', function() {
 	var $input = $(this);
 		$.ajax({
 		type: "GET",
@@ -82,7 +84,7 @@ $(document).on('click', '.fetch-info', function() {
 		  id: $input.data("product-id")
 		},
 		success: function(response) {
-		  $("#fetch-result").html(response);
+		  $("#fetch-product-result").html(response);
 		}
 	});
 });

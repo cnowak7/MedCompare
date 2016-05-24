@@ -10,14 +10,14 @@
 		        <!--<%= product.description %> Saved  this just incase we needed it-->
 		        <%= number_to_currency(product.price) %>
 		        <!-- Button that creates light box -->
-		        <button class="productLightbox fetch-info" data-product-id="<%= product.id %>" id="button">More Info</button>
+		        <button class="productLightbox fetch-product-info" data-product-id="<%= product.id %>" id="button">More Info</button>
 		    </div>
 		<%end%>
 		<!-- backdrop is the black background of lightbox -->
 		<div class="productBackdrop backdrop"></div>
 		<!-- the box that we need to plug information to -->
 		<div class="productBox box"><div class="closeProductBox"></div>
-		   <div id="fetch-result" style="text-align: center"></div>
+		   <div id="fetch-product-result" style="text-align: center"></div>
 		</div>
 	</div>
 <% end %>

@@ -13,6 +13,7 @@ class HomeController < ApplicationController
 
   def catalog
   	@products = Product.all
+    @vendors = Vendor.all
   end
 
   def productSearch
