@@ -16,6 +16,14 @@ class HomeController < ApplicationController
     @vendors = Vendor.all
   end
 
+  def filter_products
+    if !params[:vendorName].nil?
+      print "VENDOR NAME WAS NOT NIL"
+    else
+      print "VENDOR NAME WAS NIL"
+    end
+  end
+
   def productSearch
     if !params[:searchInput].nil?
       @searchInput = params[:searchInput]
