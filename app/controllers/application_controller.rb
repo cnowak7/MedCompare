@@ -8,5 +8,9 @@ private
 		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
 
-	helper_method :current_user
+	def product_compare_cart
+		@product_compare_cart ||= session[:compare_cart_products] if session[:compare_cart_products]
+	end
+
+	helper_method :current_user, :product_compare_cart
 end

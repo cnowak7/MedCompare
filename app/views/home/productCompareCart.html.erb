@@ -1,0 +1,42 @@
+<h2>Product Compare Cart</h2>
+<br><br>
+<% if !session[:compare_cart_products].nil? %>
+
+	<% i=0 %>
+	<% cartlen = session[:compare_cart_products].length %>
+
+	<% if cartlen >0 %>
+
+		<table border=1 class="table">
+			<tr>
+				<th> Product Name </th>
+				<th> Price </th>
+			</tr>
+			
+			<% while i < cartlen %>
+				<tr>
+					<td> <%= Product.find(session[:compare_cart_products][i].to_i).name %> </td>
+					<td align='right'> <%= number_to_currency(Product.find(session[:compare_cart_products][i].to_i).price) %> </td>
+					<td> 
+						<%= form_tag :controller => 'home', :action => 'removeFromProductCompareCart' do %>
+							<%= hidden_field_tag 'product_id', "#{i}" %>
+							<%= submit_tag 'Remove' %>
+					    <% end %>
+					</td>
+				</tr>
+				<% i = i + 1 %>
+			<% end %>
+		</table>
+					
+	<% else %>
+
+		<p> There are no products in this compare cart. Add products that you want to compare here from the Catalog. </p>
+
+	<% end %>
+
+<% else %>
+
+		<p> There are no products in this compare cart. Add products that you want to compare here from the Catalog. </p>
+
+<% end %>
+<br><br>

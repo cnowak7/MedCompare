@@ -18,13 +18,28 @@ Rails.application.routes.draw do
 
   post "home/updateWishList"
 
-  get 'home/index'
+  get 'index' => "home#index"
 
-  get 'home/about'
+  get 'about' => "home#about"
 
-  get 'home/contact'
+  get 'contact' => "home#contact"
 
-  get 'home/catalog'
+  get 'catalog' => "home#catalog"
+
+  # Authentication
+
+  get "login" => "sessions#new"
+
+  get "signup" => "users#new"
+
+  # Product Compare Cart
+  get "productCompareCart" => "home#productCompareCart"
+
+  post "home/addToProductCompareCart"
+
+  post "home/removeFromProductCompareCart"
+
+  # Catalog and Product Search
 
   post "home/catalog" => "home#filter_products"
 
@@ -32,7 +47,7 @@ Rails.application.routes.draw do
 
   get '/vendor_info' => 'home#vendor_info'
 
-  get 'home/productSearch'
+  get 'home/productSearch' => "home#productSearch"
 
   post 'home/productSearch'
 
@@ -40,7 +55,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sessions#new'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

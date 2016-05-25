@@ -105,6 +105,12 @@ $(document).on("click", ".fetch-vendor-info", function() {
 	});
 });
 
+function checkCartLength(cartLength) {
+	if (cartLength == 3) {
+		alert("You can only compare up to 3 products.");
+	}
+}
+
 
 
 

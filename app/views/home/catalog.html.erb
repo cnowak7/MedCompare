@@ -6,7 +6,6 @@
 	<%= image_tag("hearthealth.jpg", class: "catagory_img")%>
 	<%= image_tag("ultrasound.jpg", class: "catagory_img")%>
 </div>
-
 <!-- Container for the Catalog Content -->
 <div class="Catalog_page">
 	<!-- List all products -->
@@ -41,7 +40,15 @@
 		        <!--<%= product.description %> Saved  this just incase we needed it-->
 		        <%= number_to_currency(product.price) %>
 		        <!-- Button that creates light box -->
+		        <br><br>
 		        <button class="productLightbox fetch-product-info" data-product-id="<%= product.id %>" id="button">More Info</button>
+		        <br>
+		        <% if product_compare_cart.include?(product.id) %>
+		        	<p style="color: green">Added To Comparison Cart</p>
+		        <% else %>
+		        	<% productComparisonCartLength = product_compare_cart.length %>
+		        	<%= button_to "Add To Compare", { action: "addToProductCompareCart", product_id: product.id }, onclick: "checkCartLength(" + productComparisonCartLength.to_s + ")" %>
+		        <% end %>
 		    </div>
 		<%end%>
 		<!-- backdrop is the black background of lightbox -->

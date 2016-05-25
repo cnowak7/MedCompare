@@ -6,20 +6,22 @@ class SessionsController < ApplicationController
 	user = User.find_by_email(params[:email])
 	if user && user.authenticate(params[:password])
 		session[:user_id] = user.id
-		redirect_to home_catalog_path, notice: "Logged in!"
+
+		# Initialize new arrays for product and quantity. 
+	    session[:compare_cart_products] = Array.new
+
+		redirect_to catalog_path, notice: "Logged in!"
 	else
 		flash.now.alert = "Email or password is invalid"
 		render "new" 
-		#respond_to do |format|
-		#flash.now[:alert] = 'Email or password is invalid'
-		#format.html { render :action => 'new' }
-		#	format.json { render json: user.errors, status: :Invalid }
-		#end
-        
 	end
   end
   def destroy
   	session[:user_id] = nil
+
+	# Initialize new arrays for product and quantity. 
+    session[:compare_cart_products] = Array.new
+
   	redirect_to root_url, notice: "Logged out!"
   end
 end
