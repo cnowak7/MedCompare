@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
   def index
-    session[:wish_list_prod] = Product.all.pluck(:id)
-    session[:wish_list_qty] = Product.all.pluck(:id)
     if current_user
       redirect_to catalog_path
     else
@@ -20,6 +18,8 @@ class HomeController < ApplicationController
   	@products = Product.all
     @vendors = Vendor.all
   end
+
+  # Product Compare Cart
 
   def productCompareCart
 
@@ -55,6 +55,42 @@ class HomeController < ApplicationController
     redirect_to productCompareCart_path
   end
 
+  # Wish List
+
+  def wishList
+
+  end
+
+  def addToWishList
+    if !session[:user_id]
+      redirect_to login_path
+    else
+      # Get the specific product selected to be compared
+      # Converting the value to integer using the to_i method
+      @product_id = params[:product_id].to_i;
+      
+      # Set session product compare cart arrays to nil.
+      session[:wish_list] << @product_id
+
+      # Redirect to display cart (shopping cart)
+      # redirect_to productCompareCart_path
+      redirect_to :back
+    end
+  end
+
+  def removeFromWishList
+    # Get the specific item that needs to be removed
+    product_id = params[:product_id].to_i;
+    
+     # Remove the specific element that is desired to be removed from the array.
+    session[:wish_list].delete_at(product_id)
+    
+      # Redirect to display cart (shopping cart)
+    redirect_to wishList_path
+  end
+
+  # Filter Products
+
   def filter_products
     if !params[:vendorName].nil?
       print "VENDOR NAME WAS NOT NIL"
@@ -73,9 +109,6 @@ class HomeController < ApplicationController
     end
   end
 
-  def wishList
-  end
-
   def product_info
     @product = Product.find(params[:id])
     render layout: false
@@ -84,18 +117,6 @@ class HomeController < ApplicationController
   def vendor_info
     @vendor = Vendor.find(params[:id])
     render layout: false
-  end
-
-  def updateWishList
-    # Get the specific item that needs to be removed
-    wishListId = params[:wishListId].to_i;
-    
-     # Remove the specific element that is desired to be removed from the array.
-    session[:wish_list_prod].delete_at(wishListId)
-    session[:wish_list_qty].delete_at(wishListId)
-    
-      # Redirect to display cart (shopping cart)
-    redirect_to wishList_url
   end
 
 end

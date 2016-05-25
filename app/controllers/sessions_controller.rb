@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
 		# Initialize new arrays for product and quantity. 
 	    session[:compare_cart_products] = Array.new
+	    session[:wish_list_products] = Array.new
 
 		redirect_to catalog_path, notice: "Logged in!"
 	else
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
 
 	# Initialize new arrays for product and quantity. 
     session[:compare_cart_products] = Array.new
+    session[:wish_list_products] = Array.new
 
   	redirect_to root_url, notice: "Logged out!"
   end

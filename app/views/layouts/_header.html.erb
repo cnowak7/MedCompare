@@ -32,6 +32,8 @@
 			<%= link_to "Catalog", catalog_path %>
 			<% productComparisonCartString = "Product Comparison Cart (" + product_compare_cart.length.to_s + ")" %>
 			<%= link_to productComparisonCartString, productCompareCart_path %>
+			<% wishListString = "My Wish List (" + wish_list.length.to_s + ")" %>
+			<%= link_to wishListString, wishList_path %>
 		<% end %>
 	</div>
 

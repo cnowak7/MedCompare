@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
+			session[:compare_cart_products] = Array.new
+			session[:wish_list_products] = Array.new
 			redirect_to catalog_path, notice: "Thank you for signing up!"
 		else
 			render 'new'

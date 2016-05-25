@@ -14,10 +14,6 @@ Rails.application.routes.draw do
   resources :suppliers
   resources :products
 
-  get "wishList" => "home#wishList", :as => "wishList"
-
-  post "home/updateWishList"
-
   get 'index' => "home#index"
 
   get 'about' => "home#about"
@@ -38,6 +34,13 @@ Rails.application.routes.draw do
   post "home/addToProductCompareCart"
 
   post "home/removeFromProductCompareCart"
+
+  # Wish List
+  get "wishList" => "home#wishList"
+
+  post "home/addToWishList"
+
+  post "home/removeFromWishList"
 
   # Catalog and Product Search
 

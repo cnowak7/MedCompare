@@ -1,41 +1,42 @@
-<h1>Wish List</h1>
-<% i=0 %>
-<% totqty=0 %>
-<% totprice=0 %>
-<% cartlen = session[:wish_list_prod].length %>
+<h2>My Wish List</h2>
+<br><br>
+<% if !session[:wish_list].nil? %>
 
-<% if cartlen >0 %>
-	<table border=1>
-		<tr>
-			<th> Product Name </th>
-			<th> Price </th>
-			<th> Qty Selected </th>
-		</tr>
-		
-	<% while i < cartlen %>
-		<tr>
-			<td> <%= Product.find(session[:wish_list_prod][i].to_i).name %> </td>
-			<td align='right'> <%= number_to_currency(Product.find(session[:wish_list_prod][i].to_i).price) %> </td>
-			<td align='center'> <%= session[:wish_list_qty][i] %> </td>
-			<td> 
-				<%= form_tag :controller => 'home', :action => 'updateWishList' do %>
-					<%= hidden_field_tag 'wishListId', "#{i}" %>
-					<%= submit_tag 'Remove' %>
-			    <% end %>
-			</td>
-		</tr>
-		<% totqty = totqty + session[:wish_list_qty][i].to_i %>
-		<% totprice = totprice + (Product.find(session[:wish_list_prod][i].to_i).price * session[:wish_list_qty][i].to_i) %>
-		<% i = i + 1 %>
+	<% i=0 %>
+	<% cartlen = session[:wish_list].length %>
+
+	<% if cartlen >0 %>
+
+		<table border=1 class="table">
+			<tr>
+				<th> Product Name </th>
+				<th> Price </th>
+			</tr>
+			
+			<% while i < cartlen %>
+				<tr>
+					<td> <%= Product.find(session[:wish_list][i].to_i).name %> </td>
+					<td align='right'> <%= number_to_currency(Product.find(session[:wish_list][i].to_i).price) %> </td>
+					<td> 
+						<%= form_tag :controller => 'home', :action => 'removeFromWishList' do %>
+							<%= hidden_field_tag 'product_id', "#{i}" %>
+							<%= submit_tag 'Remove' %>
+					    <% end %>
+					</td>
+				</tr>
+				<% i = i + 1 %>
+			<% end %>
+		</table>
+					
+	<% else %>
+
+		<p> There are no products in this wish list. Add products that you're interested in from the Catalog. </p>
+
 	<% end %>
-	
-		<tr bgcolor='yellow'>
-			<td> <b> Total </b> </td>
-			<td align='right'> <b> <%= number_to_currency(totprice) %> </b> </td>
-			<td align='center'> <b> <%= totqty %> </b> </td>
-		</tr>
-	</table>		
+
 <% else %>
-	<p> There are no items in the cart. </p>
+
+		<p> There are no products in this wish list. Add products that you're interested in from the Catalog. </p>
 
 <% end %>
+<br><br>

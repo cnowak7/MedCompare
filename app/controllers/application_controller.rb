@@ -12,5 +12,9 @@ private
 		@product_compare_cart ||= session[:compare_cart_products] if session[:compare_cart_products]
 	end
 
-	helper_method :current_user, :product_compare_cart
+	def wish_list
+		@wish_list ||= session[:wish_list_products] if session[:wish_list_products]
+	end
+
+	helper_method :current_user, :product_compare_cart, :wish_list
 end
