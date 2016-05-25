@@ -1,9 +1,9 @@
 <h2>My Wish List</h2>
 <br><br>
-<% if !session[:wish_list].nil? %>
+<% if !session[:wish_list_products].nil? %>
 
 	<% i=0 %>
-	<% cartlen = session[:wish_list].length %>
+	<% cartlen = session[:wish_list_products].length %>
 
 	<% if cartlen >0 %>
 
@@ -15,8 +15,8 @@
 			
 			<% while i < cartlen %>
 				<tr>
-					<td> <%= Product.find(session[:wish_list][i].to_i).name %> </td>
-					<td align='right'> <%= number_to_currency(Product.find(session[:wish_list][i].to_i).price) %> </td>
+					<td> <%= Product.find(session[:wish_list_products][i].to_i).name %> </td>
+					<td align='right'> <%= number_to_currency(Product.find(session[:wish_list_products][i].to_i).price) %> </td>
 					<td> 
 						<%= form_tag :controller => 'home', :action => 'removeFromWishList' do %>
 							<%= hidden_field_tag 'product_id', "#{i}" %>

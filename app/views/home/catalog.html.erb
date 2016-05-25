@@ -40,14 +40,17 @@
 		        <!--<%= product.description %> Saved  this just incase we needed it-->
 		        <%= number_to_currency(product.price) %>
 		        <!-- Button that creates light box -->
-		        <br><br>
 		        <button class="productLightbox fetch-product-info" data-product-id="<%= product.id %>" id="button">More Info</button>
-		        <br>
 		        <% if product_compare_cart.include?(product.id) %>
 		        	<p style="color: green">Added To Comparison Cart</p>
 		        <% else %>
 		        	<% productComparisonCartLength = product_compare_cart.length %>
-		        	<%= button_to "Add To Compare", { action: "addToProductCompareCart", product_id: product.id }, onclick: "checkCartLength(" + productComparisonCartLength.to_s + ")" %>
+		        	<%= button_to "+Compare", { action: "addToProductCompareCart", product_id: product.id }, onclick: "checkCartLength(" + productComparisonCartLength.to_s + ")" %>
+		        <% end %>
+		        <% if wish_list.include?(product.id) %>
+		        	<p style="color: green">Added To Wish List</p>
+		        <% else %>
+		        	<%= button_to "+Wish List", { action: "addToWishList", product_id: product.id } %>
 		        <% end %>
 		    </div>
 		<%end%>

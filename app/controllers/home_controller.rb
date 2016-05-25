@@ -70,7 +70,7 @@ class HomeController < ApplicationController
       @product_id = params[:product_id].to_i;
       
       # Set session product compare cart arrays to nil.
-      session[:wish_list] << @product_id
+      session[:wish_list_products] << @product_id
 
       # Redirect to display cart (shopping cart)
       # redirect_to productCompareCart_path
@@ -83,7 +83,7 @@ class HomeController < ApplicationController
     product_id = params[:product_id].to_i;
     
      # Remove the specific element that is desired to be removed from the array.
-    session[:wish_list].delete_at(product_id)
+    session[:wish_list_products].delete_at(product_id)
     
       # Redirect to display cart (shopping cart)
     redirect_to wishList_path
