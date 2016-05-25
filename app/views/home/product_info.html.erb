@@ -5,4 +5,11 @@
 <%= image_tag(@product.image, size: "200x100") %>
 <br><br>
 <p> <%= @product.description %> </p>
+<% if @product.id == 1 %>
+	<u><a href="https://www.google.com/patents/US5629524">Research Info</a></u>
+<% elsif @product.id == 2 %>
+	<u><a href="https://www.google.com/patents/US5627873">Research Info</a></u>
+<% elsif @product.id == 4 %>
+	<u><a href="https://www.google.com/patents/US5323776">Research Info</a></u>
+<% end %>
 <h2> Vendor: <%= @product.vendor.name %> </h2>
