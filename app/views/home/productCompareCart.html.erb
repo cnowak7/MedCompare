@@ -7,7 +7,7 @@
 
 	<% if cartlen >0 %>
 
-		<table border=1 class="table">
+		<table border=1 class="table" id="compareTableHorizontal">
 			<tr>
 				<th> Product Name </th>
 				<th> Price </th>
@@ -15,18 +15,27 @@
 			
 			<% while i < cartlen %>
 				<tr>
-					<td> <%= Product.find(session[:compare_cart_products][i].to_i).name %> </td>
-					<td align='right'> <%= number_to_currency(Product.find(session[:compare_cart_products][i].to_i).price) %> </td>
-					<td> 
-						<%= form_tag :controller => 'home', :action => 'removeFromProductCompareCart' do %>
-							<%= hidden_field_tag 'product_id', "#{i}" %>
-							<%= submit_tag 'Remove' %>
-					    <% end %>
-					</td>
+					<td id="<%='name'+i.to_s%>" ><%= Product.find(session[:compare_cart_products][i].to_i).name %></td>
+					<td id="<%='price'+i.to_s%>" align='right'> <%= number_to_currency(Product.find(session[:compare_cart_products][i].to_i).price) %> </td>
+					<td id="<%='image'+i.to_s%>"><%= image_tag(Product.find(session[:compare_cart_products][i].to_i).image, class: "product_compare_img") %></td>
+					<td id="<%='description'+i.to_s%>"><%= Product.find(session[:compare_cart_products][i].to_i).description %></td>
+					<td id="<%='categoryid'+i.to_s%>"><%= Product.find(session[:compare_cart_products][i].to_i).category_id %></td>
+					<td id="<%='manufacturerid'+i.to_s%>"><%= Product.find(session[:compare_cart_products][i].to_i).manufacturer_id %></td>
+					<td id="<%='vendorid'+i.to_s%>"><%= Product.find(session[:compare_cart_products][i].to_i).vendor_id %></td>
+					<td id="<%='purchaseprice'+i.to_s%>"><%= Product.find(session[:compare_cart_products][i].to_i).purchase_price %></td>
+					<td id="<%='quantity'+i.to_s%>"><%= Product.find(session[:compare_cart_products][i].to_i).quantity_on_hand %></td>
+					<td id="<%='remove'+i.to_s%>"><%= form_tag :controller => 'home', :action => 'removeFromProductCompareCart' do %>
+						<%= hidden_field_tag 'product_id', "#{i}" %>
+						<%= submit_tag 'Remove' %>
+					<% end %></td>
 				</tr>
 				<% i = i + 1 %>
 			<% end %>
 		</table>
+		
+		<div id="compareTableVertical">
+			
+		</div>
 					
 	<% else %>
 

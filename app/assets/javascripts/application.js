@@ -111,6 +111,23 @@ function checkCartLength(cartLength) {
 	}
 }
 
-
-
-
+$(document).ready( function(){
+	var table = document.getElementById('compareTableVertical');
+	var properties = ["name","price","image","description","categoryid","manufacturerid","vendorid","purchaseprice","quantity","remove"];
+	propertiesNames = ["Name:","Price:","Image:","Description:","Category ID:","Manufacturer ID:","Vendor ID:","Purchase Price:","Quantity:","Click to Remove:"]
+	for(var i=0; i < properties.length; i++){
+		var tr = document.createElement('tr');
+		var category = document.createElement('td');
+		var textElement1 = document.createTextNode(propertiesNames[i]);
+		category.appendChild(textElement1);
+		tr.appendChild(category);
+		for (var j = 0; j < 3; j++){
+			var td = document.createElement('td');
+			var textElement2 = document.createTextNode($("#"+properties[i]+j).text());
+			td.appendChild(textElement2);
+			tr.appendChild(td);
+		}
+		table.appendChild(tr);
+	}
+	$('#compareTableHorizontal').hide();
+});
