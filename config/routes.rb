@@ -44,7 +44,7 @@ Rails.application.routes.draw do
 
   post "vendorLoginAction" => "vendors#log_in_action", :as => "vendor_log_in_action"
 
-  # General Login
+  # Admin Login
 
   get "login" => "home#login"
 
