@@ -29,8 +29,12 @@
 			<%= link_to "Catalog", catalog_path %>
 			<% productComparisonCartString = "Product Comparison Cart (" + product_compare_cart.length.to_s + ")" %>
 			<%= link_to productComparisonCartString, productCompareCart_path %>
-			<% wishListString = "My Wish List (" + wish_list.length.to_s + ")" %>
-			<%= link_to wishListString, wishList_path %>
+			<% if session[:role] == "clinic" || session[:role] == "admin" %>
+				<% wishListString = "My Wish List (" + wish_list.length.to_s + ")" %>
+				<%= link_to wishListString, wishList_path %>
+			<% elsif session[:role] == "vendor" %>
+				<%= link_to "My Products", my_products_path %>
+			<% end %>
 		<% end %>
 	</div>
 

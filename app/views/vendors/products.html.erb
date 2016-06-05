@@ -1,0 +1,24 @@
+<div style="text-align: center">
+	<p id="notice" style="text-align: center"><%= notice %></p>
+	<h2>My Products</h2>
+	<h3><u><%= link_to 'Add Product', vendor_add_product_view_path %><u></h3>
+</div>
+<table class="table">
+  <tr>
+    <th>Product Name</th>
+    <th>Image</th>
+    <th>Description</th>
+    <th>Sale Price</th>
+  </tr>
+  
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= image_tag product.image, size: "400x200" %> </td>
+      <td><%= product.description %> </td>
+      <td><%= number_to_currency(product.price) %> </td>
+	  <td style="background-color:green"><%= link_to 'Edit', edit_product_path(product), style: "color: white;" %></td>
+	  <td style="background-color:red;"><%= link_to 'Delete', product, style: "color: white;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <%end%>
+</table>

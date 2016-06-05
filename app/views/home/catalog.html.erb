@@ -47,11 +47,13 @@
 		        	<% productComparisonCartLength = product_compare_cart.length %>
 		        	<%= button_to "+Compare", { action: "addToProductCompareCart", product_id: product.id }, onclick: "checkCartLength(" + productComparisonCartLength.to_s + ")" %>
 		        <% end %>
-		        <% if wish_list.include?(product.id) %>
-		        	<p style="color: green">Added To Wish List</p>
-		        <% else %>
-		        	<%= button_to "+Wish List", { action: "addToWishList", product_id: product.id } %>
-		        <% end %>
+		        <% if session[:role] == "clinic" || session[:role] == "admin" %>
+			        <% if wish_list.include?(product.id) %>
+			        	<p style="color: green">Added To Wish List</p>
+			        <% else %>
+			        	<%= button_to "+Wish List", { action: "addToWishList", product_id: product.id } %>
+			        <% end %>
+			  	<% end %>
 		    </div>
 		<%end%>
 		<!-- backdrop is the black background of lightbox -->

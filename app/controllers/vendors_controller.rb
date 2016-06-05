@@ -38,6 +38,25 @@ class VendorsController < ApplicationController
     end
   end
 
+  def products
+    @vendor = Vendor.find(session[:user_id])
+    @products = @vendor.products
+  end
+
+  def add_product_view
+    @product = Product.new
+  end
+
+  def add_product_action
+    @product = Product.new(product_params)
+    if @product.save
+      # TO-DO
+      redirect_to my_products_path, notice: "Product has been added!"
+    else
+      render "add_product_view"
+    end
+  end
+
   def sign_up_view
     @vendor = Vendor.new
   end

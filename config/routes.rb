@@ -20,6 +20,14 @@ Rails.application.routes.draw do
 
   get 'catalog' => "home#catalog"
 
+  # Vendor's "My Products" Section
+
+  get "myProducts" => "vendors#products", :as => "my_products"
+
+  get "addProduct" => "vendors#add_product_view", :as => "vendor_add_product_view"
+
+  post "addProductAction" => "vendors#add_product_action", :as => "vendor_add_product_action"
+
   # Clinic Sign Up
 
   get "clinicSignup" => "clinics#sign_up_view", :as => "clinic_sign_up_view"
