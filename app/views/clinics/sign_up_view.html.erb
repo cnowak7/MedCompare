@@ -1,10 +1,10 @@
 <div class="signup">
 	<div class="form_signup">
-		<h1>Clinic Sign Up</h1>
+		<h1>Clinic Signup</h1>
 
 		<%= form_for @clinic, :url => clinic_sign_up_action_path do |f| %>
 			<% if @clinic.errors.any? %>
-				<div class="error_messages">
+				<div class="error_messages" style="color: red">
 					<h2>Form is invalid</h2>
 					<ul>
 						<% @clinic.errors.full_messages.each do |message| %>

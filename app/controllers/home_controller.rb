@@ -100,7 +100,7 @@ class HomeController < ApplicationController
     redirect_to :back
   end
 
-  def productSearch
+  def search
     if !params[:searchInput].nil?
       @searchInput = params[:searchInput]
       @searchCriteria = "%#{params[:searchInput]}%"

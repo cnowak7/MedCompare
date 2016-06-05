@@ -44,11 +44,13 @@ Rails.application.routes.draw do
 
   post "vendorLoginAction" => "vendors#log_in_action", :as => "vendor_log_in_action"
 
-  # Admin Login
+  # General Login
 
   get "login" => "home#login"
 
-  get "signup" => "users#new"
+  # Admin Login
+
+  get "admin" => "sessions#new"
 
   # Product Compare Cart
   get "productCompareCart" => "home#productCompareCart"
@@ -72,9 +74,9 @@ Rails.application.routes.draw do
 
   get '/vendor_info' => 'home#vendor_info'
 
-  get 'home/productSearch' => "home#productSearch"
+  get 'home/search' => "home#search"
 
-  post 'home/productSearch'
+  post 'home/search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

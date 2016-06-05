@@ -7,7 +7,7 @@
 
 		<div class="searchbox">
 			<% if current_user %>
-				<%= form_tag controller: "home", action: "productSearch" do %>
+				<%= form_tag controller: "home", action: "search" do %>
 					<%= text_field_tag 'searchInput', nil, id: "box", placeholder: "Search For Products And/Or Vendors..."%>
 				<% end %>
 			<% end %>
@@ -35,11 +35,12 @@
 	</div>
 
 
-	<% if current_user %>
+	<% if session[:role] == "admin" %>
 		<div class="third_header">
 			<%= link_to "Products", products_path %>
 			<%= link_to "Categories", categories_path %>
 			<%= link_to "Vendors", vendors_path %>
+			<%= link_to "Clinics", clinics_path %>
 		</div>
 	<% end %>
 

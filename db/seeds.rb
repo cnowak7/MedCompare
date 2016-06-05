@@ -13,28 +13,42 @@
 #                      3.) rake db:seed (officially loads sample data into database)
 #                      4.) rails server (to run the server and see our sample data)
 
+# ADMIN USER:
+
+User.create(email: "medCompareAdmin@gmail.com",
+			password: "adminPassword",
+			password_confirmation: "adminPassword")
+
 # VENDORS:
 
 Vendor.create(name: "HealthTech United",
 				image: "vendorImage1.jpg",
 				description: "We provide the most up-to-date technology for practioners in the health industry.",
 				email: "healthTechUnited@gmail.com",
-				phone_number: "111-111-1111")
+				phone_number: "111-111-1111",
+				password: "vendor",
+				password_confirmation: "vendor")
 Vendor.create(name: "Tech-For-Health Foundation",
 				image: "vendorImage2.jpg",
 				description: "Top-notch health technology for top-notch treatment. Let us save lives with you.",
 				email: "techForHealth@gmail.com",
-				phone_number: "222-222-2222")
+				phone_number: "222-222-2222",
+				password: "vendor",
+				password_confirmation: "vendor")
 Vendor.create(name: "Aviato",
 				image: "vendorImage3.jpg",
 				description: "HealthTech United enslaves children overseas to build their tech, so choose us. Aviato is the revolution of health tech.",
 				email: "myAviato@gmail.com",
-				phone_number: "333-333-3333")
+				phone_number: "333-333-3333",
+				password: "vendor",
+				password_confirmation: "vendor")
 Vendor.create(name: "Health-To-The-Tech LLC",
 				image: "vendorImage4.jpg",
 				description: "Buy our health technology so your patients can have the best quality care every time, all the time. We specialize in selling top-notch X-Ray and MRI Machine Technology",
 				email: "healthToTheTech@gmail.com",
-				phone_number: "444-444-4444")
+				phone_number: "444-444-4444",
+				password: "vendor",
+				password_confirmation: "vendor")
 
 # CATEGORIES:
 
