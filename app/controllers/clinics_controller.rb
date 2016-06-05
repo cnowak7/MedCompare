@@ -37,6 +37,42 @@ class ClinicsController < ApplicationController
     end
   end
 
+  def sign_up_view
+    @clinic = Clinic.new
+  end
+
+  def sign_up_action
+    @clinic = Clinic.new(clinic_params)
+    if @clinic.save
+      session[:user_id] = @clinic.id
+      session[:role] = "clinic"
+      session[:compare_cart_products] = Array.new
+      session[:wish_list_products] = Array.new
+      redirect_to catalog_path, notice: "Thank you for signing up!"
+    else
+      render "sign_up_view"
+    end
+  end
+
+  def log_in_view
+  end
+
+  def log_in_action
+    clinic = Clinic.find_by_email(params[:email])
+    if clinic && clinic.authenticate(params[:password])
+      session[:user_id] = clinic.id
+      session[:role] = "clinic"
+      # Initialize new arrays for product and quantity. 
+      session[:compare_cart_products] = Array.new
+      session[:wish_list_products] = Array.new
+
+      redirect_to catalog_path, notice: "Logged in as " + clinic.email
+    else
+      flash.now.alert = "Email or password is invalid"
+      render "log_in_view"
+    end
+  end
+
   # PATCH/PUT /clinics/1
   # PATCH/PUT /clinics/1.json
   def update
@@ -69,6 +105,6 @@ class ClinicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clinic_params
-      params.require(:clinic).permit(:name, :email, :phone_number, :rating)
+      params.require(:clinic).permit(:name, :phone_number, :rating, :email, :password, :password_confirmation)
     end
 end

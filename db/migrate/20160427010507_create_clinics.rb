@@ -5,6 +5,7 @@ class CreateClinics < ActiveRecord::Migration
       t.string :email
       t.string :phone_number
       t.integer :rating
+      t.string :password_digest
 
       t.timestamps null: false
     end

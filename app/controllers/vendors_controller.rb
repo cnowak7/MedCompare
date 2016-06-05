@@ -38,6 +38,42 @@ class VendorsController < ApplicationController
     end
   end
 
+  def sign_up_view
+    @vendor = Vendor.new
+  end
+
+  def sign_up_action
+    @vendor = Vendor.new(vendor_params)
+    if @vendor.save
+      session[:user_id] = @vendor.id
+      session[:role] = "vendor"
+      session[:compare_cart_products] = Array.new
+      session[:wish_list_products] = Array.new
+      redirect_to catalog_path, notice: "Thank you for signing up!"
+    else
+      render "sign_up_view"
+    end
+  end
+
+  def log_in_view
+  end
+
+  def log_in_action
+    vendor = Vendor.find_by_email(params[:email])
+    if vendor && vendor.authenticate(params[:password])
+      session[:user_id] = vendor.id
+      session[:role] = "vendor"
+      # Initialize new arrays for product and quantity. 
+      session[:compare_cart_products] = Array.new
+      session[:wish_list_products] = Array.new
+
+      redirect_to catalog_path, notice: "Logged in as " + vendor.email
+    else
+      flash.now.alert = "Email or password is invalid"
+      render "log_in_view"
+    end
+  end
+
   # PATCH/PUT /vendors/1
   # PATCH/PUT /vendors/1.json
   def update
@@ -70,6 +106,6 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:name, :email, :phone_number)
+      params.require(:vendor).permit(:name, :email, :phone_number, :password, :password_confirmation)
     end
 end

@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   resources :clinics
   resources :products
   resources :manufactures
-  resources :clinicals
-  resources :clinicals
   resources :suppliers
   resources :products
 
@@ -22,9 +20,33 @@ Rails.application.routes.draw do
 
   get 'catalog' => "home#catalog"
 
-  # Authentication
+  # Clinic Sign Up
 
-  get "login" => "sessions#new"
+  get "clinicSignup" => "clinics#sign_up_view", :as => "clinic_sign_up_view"
+
+  post "clinicSignupAction" => "clinics#sign_up_action", :as => "clinic_sign_up_action"
+
+  # Clinic Log In
+
+  get "clinicLogin" => "clinics#log_in_view", :as => "clinic_log_in_view"
+
+  post "clinicLoginAction" => "clinics#log_in_action", :as => "clinic_log_in_action"
+
+  # Vendor Sign Up
+
+  get "vendorSignup" => "vendors#sign_up_view", :as => "vendor_sign_up_view"
+
+  post "vendorSignupAction" => "vendors#sign_up_action", :as => "vendor_sign_up_action"
+
+  # Vendor Login
+
+  get "vendorLogin" => "vendors#log_in_view", :as => "vendor_log_in_view"
+
+  post "vendorLoginAction" => "vendors#log_in_action", :as => "vendor_log_in_action"
+
+  # General Login
+
+  get "login" => "home#login"
 
   get "signup" => "users#new"
 

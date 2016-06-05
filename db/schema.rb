@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(version: 20160518144325) do
     t.string   "email"
     t.string   "phone_number"
     t.integer  "rating"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -64,8 +65,9 @@ ActiveRecord::Schema.define(version: 20160518144325) do
     t.text     "description"
     t.string   "email"
     t.string   "phone_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
