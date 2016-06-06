@@ -1,5 +1,6 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:edit_product, :update_product, :destroy_product]
 
   # GET /vendors
   # GET /vendors.json
@@ -38,6 +39,8 @@ class VendorsController < ApplicationController
     end
   end
 
+  #Vendor Products
+
   def products
     @vendor = Vendor.find(session[:user_id])
     @products = @vendor.products
@@ -45,9 +48,11 @@ class VendorsController < ApplicationController
 
   def add_product_view
     @product = Product.new
+    @vendor = Vendor.find(session[:user_id])
   end
 
   def add_product_action
+    @vendor = Vendor.find(session[:user_id])
     @product = Product.new(product_params)
     if @product.save
       # TO-DO
@@ -56,6 +61,32 @@ class VendorsController < ApplicationController
       render "add_product_view"
     end
   end
+
+  def edit_product
+    @vendor = Vendor.find(session[:user_id])
+  end
+
+  def update_product
+    respond_to do |format|
+      if @product.update(product_params)
+        format.html { redirect_to my_products_path, notice: 'Product was successfully updated.' }
+        format.json { render :show, status: :ok, location: @product }
+      else
+        format.html { render "edit_product" }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy_product
+    @product.destroy
+    respond_to do |format|
+      format.html { redirect_to my_products_path, notice: 'Product was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  #Vendor Authentication
 
   def sign_up_view
     @vendor = Vendor.new
@@ -123,8 +154,16 @@ class VendorsController < ApplicationController
       @vendor = Vendor.find(params[:id])
     end
 
+    def set_product
+      @product = Product.find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
       params.require(:vendor).permit(:name, :image, :description, :email, :phone_number, :password, :password_confirmation)
+    end
+
+    def product_params
+      params.require(:product).permit(:name, :image, :description, :category_id, :vendor_id, :manufacturer_id, :sale_price, :purchase_price, :quantity_on_hand)
     end
 end

@@ -17,8 +17,8 @@
       <td><%= image_tag product.image, size: "400x200" %> </td>
       <td><%= product.description %> </td>
       <td><%= number_to_currency(product.price) %> </td>
-	  <td style="background-color:green"><%= link_to 'Edit', edit_product_path(product), style: "color: white;" %></td>
-	  <td style="background-color:red;"><%= link_to 'Delete', product, style: "color: white;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  <td style="background-color:green"><%= link_to 'Edit', vendor_edit_product_path(product.id), style: "color: white;" %></td>
+	  <td style="background-color:red;"><%= link_to 'Delete', vendor_delete_product_path(product), style: "color: white;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <%end%>
 </table>

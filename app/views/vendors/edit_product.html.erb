@@ -1,0 +1,57 @@
+<h2>Update Product</h2>
+<br>
+<%= form_for @product, :url => vendor_update_product_path do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.order(:name),:id,:name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :sale_price %>
+    <%= f.text_field :sale_price %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :purchase_price %>
+    <%= f.text_field :purchase_price %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :quantity_on_hand %>
+    <%= f.number_field :quantity_on_hand %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :vendor_id, :value => @vendor.id %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -3,7 +3,6 @@ class Product < ActiveRecord::Base
 	validates :image, presence: true
 	validates :description, presence: true
 	validates :category_id, presence: true
-	validates :manufacturer_id, presence: true
 	validates :vendor_id, presence: true
 	validates :purchase_price, presence: true, numericality: true
 	validates :quantity_on_hand, presence: true, numericality: true

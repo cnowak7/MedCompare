@@ -28,6 +28,12 @@ Rails.application.routes.draw do
 
   post "addProductAction" => "vendors#add_product_action", :as => "vendor_add_product_action"
 
+  get "editProduct/:id" => "vendors#edit_product", :as => "vendor_edit_product"
+
+  patch "updateProduct/:id" => "vendors#update_product", :as => "vendor_update_product"
+
+  delete "deleteProduct/:id" => "vendors#destroy_product", :as => "vendor_delete_product"
+
   # Clinic Sign Up
 
   get "clinicSignup" => "clinics#sign_up_view", :as => "clinic_sign_up_view"
