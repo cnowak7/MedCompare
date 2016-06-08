@@ -111,7 +111,7 @@ class HomeController < ApplicationController
       @searchInput = params[:searchInput]
       @searchCriteria = "%#{params[:searchInput]}%"
       @productList = Product.where("description like :search or name like :search", search: @searchCriteria)
-      @vendorList = Vendor.where("name like :search or searchTags like :search", search: @searchCriteria)
+      @vendorList = Vendor.where("name like :search or search_tags like :search", search: @searchCriteria)
     end
   end
 

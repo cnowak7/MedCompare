@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160518144325) do
     t.string   "name"
     t.string   "image"
     t.text     "description"
-    t.string   "searchTags"
+    t.string   "search_tags"
     t.string   "email"
     t.string   "phone_number"
     t.string   "password_digest"
