@@ -479,10 +479,11 @@ a:link {
 	}
 
 
-h1{
+h6  {
 		font-size: 40px;
 		font-family: Tahoma;
 	}
+
 .About_page {
 	display: flex;
 	flex-direction: row;
