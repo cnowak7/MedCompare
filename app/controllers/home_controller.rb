@@ -15,8 +15,14 @@ class HomeController < ApplicationController
   end
 
   def catalog
-  	@products = Product.all
-    @vendors = Vendor.all
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @products = @category.products
+      @vendors = Vendor.all
+    else
+      @products = Product.all
+      @vendors = Vendor.all
+    end
   end
 
   # Product Compare Cart
