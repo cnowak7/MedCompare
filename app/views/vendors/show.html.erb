@@ -15,8 +15,10 @@
   <%= @vendor.phone_number %>
 </p>
 
-<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
-<%= link_to 'Back', vendors_path %>
+<% if session[:role] == "admin" %>
+  <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
+  <%= link_to 'Back', vendors_path %>
+<% end %>
 
 <h2> Products By <%= @vendor.name %> </h2>
 

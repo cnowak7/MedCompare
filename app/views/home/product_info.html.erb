@@ -12,4 +12,5 @@
 <% elsif @product.id == 4 %>
 	<u><a href="https://www.google.com/patents/US5323776">Research Info</a></u>
 <% end %>
-<h2> Vendor: <%= @product.vendor.name %> </h2>
+<h2>Vendor:</h2>
+<h3><u><%= link_to @product.vendor.name, @product.vendor %><u></h3>
