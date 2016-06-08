@@ -4,6 +4,7 @@ class CreateVendors < ActiveRecord::Migration
       t.string :name
       t.string :image
       t.text :description
+      t.string :searchTags
       t.string :email
       t.string :phone_number
       t.string :password_digest

@@ -18,7 +18,7 @@
 //= require catalog
 
 
-$(document).on('click', '.catagory_img', function(){
+$(document).on('click', '.filter_img', function(){
 	$(".catalog_filter").addClass("catalog_filter_test slideRight");
 	//$(".product_item").addClass("slideRight");
 	$(".catalog_filter").removeClass("catalog_filter");
