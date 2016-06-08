@@ -17,6 +17,11 @@
 	text-decoration: none;
 	}
 
+html, body {
+	height: 100%;
+}
+
+
 /* FlexBox container start*/
 .body_container {
 		display: flex;
@@ -120,6 +125,7 @@
 
 .main {
 		order: 2;  background: white; flex: 1 0 0;
+		min-height: 100%;
 
 }
 
@@ -402,3 +408,228 @@ td.text-center {
 td.text-right {
   text-align: right;
 }
+
+.boxSign {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 150%;
+}
+
+.loginClinic {
+	background-color: #333;
+	color: #FFFFFF;
+	padding: 20px;
+	max-width: 600px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+	.loginClinic:hover {
+		color: #FFFFFF;
+		background: #43A047;
+	}
+
+.loginVendor {
+	background-color: #333;
+	color: #FFFFFF;
+	padding: 20px;
+	max-width: 600px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+	.loginVendor:hover {
+		color: #FFFFFF;
+		background: #063E7A;
+	}
+
+
+.clinicSign {
+	position: relative;
+	background: #063E7A;
+	max-width: 300px;
+	padding: 30px;
+	color: white;
+	font-family: Tahoma;
+	border-radius: 20px;
+	border-color: white;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+	.clinicSign h1{
+		font-size: 40px;
+		font-family: Tahoma;
+	}
+
+a:link {
+	text-decoration:none;
+}
+.vendorSign {
+	position: relative;
+	background: #43A047;
+	max-width: 300px;
+	padding: 30px;
+	color: black;
+	font-family: Tahoma;
+	border-radius: 20px;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+	.vendorSign h1{
+		font-size: 40px;
+		font-family: Tahoma;
+	}
+
+
+h1{
+		font-size: 40px;
+		font-family: Tahoma;
+	}
+.About_page {
+	display: flex;
+	flex-direction: row;
+}
+
+.aboutContent {
+	max-width: 40%;
+}
+
+#about1 {
+	font-size: 20px;
+	font-family: Tahoma;
+	color: lightblue;
+}
+
+.contact_Page {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.contactContent {
+	max-width: 30%;
+	padding-left: 50px;
+	top: 40px;
+	font-size: 20px;
+	font-family: Tahoma;
+}
+
+#contact1 {
+	font-size: 20px;
+	font-family: Tahoma;
+	color: lightblue;
+}
+
+.contactPicture {
+	float: right;
+}
+
+.tossing{
+	animation-name: tossing;
+	-webkit-animation-name: tossing;	
+
+	animation-duration: 2.5s;	
+	-webkit-animation-duration: 2.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes tossing {
+	0% {
+		transform: rotate(-4deg);	
+	}
+	50% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(-4deg);	
+	}						
+}
+
+@-webkit-keyframes tossing {
+	0% {
+		-webkit-transform: rotate(-4deg);	
+	}
+	50% {
+		-webkit-transform: rotate(4deg);
+	}
+	100% {
+		-webkit-transform: rotate(-4deg);	
+	}				
+}
+
+.pulse{
+	animation-name: pulse;
+	-webkit-animation-name: pulse;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+		opacity: 0.7;		
+	}
+	50% {
+		transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(0.9);
+		opacity: 0.7;	
+	}			
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;		
+	}
+	50% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(0.95);
+		opacity: 0.7;	
+	}			
+}
+
+.floating{
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%);	
+	}
+	50% {
+		transform: translateY(8%);	
+	}	
+	100% {
+		transform: translateY(0%);
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%);	
+	}
+	50% {
+		-webkit-transform: translateY(8%);	
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+	}			
+}
+

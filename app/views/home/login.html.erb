@@ -1,16 +1,20 @@
-<div style="text-align: center">
+<div class="boxSign" style="text-align: center">
+	<div class="clinicSign">
+	<h1>Clinical Login</h1>
+	<br><br>
+	<%= link_to "LOG IN AS CLINIC", clinic_log_in_view_path, {:style=>"color:white", class:"loginClinic"} %>
 	<br><br>
 	<br><br>
-	<u><%= link_to "LOG IN AS CLINIC", clinic_log_in_view_path %></u>
+	<%= link_to "SIGN UP AS CLINIC", clinic_sign_up_view_path, {:style=>"color:white", class:"loginClinic"} %>
+	<br><br>
+	</div>
+	<div class="vendorSign">
+	<h1>Vendor Login</h1>
+	<br><br>
+	<%= link_to "LOG IN AS VENDOR", vendor_log_in_view_path, {:style=>"color:white", class:"loginVendor"} %>
 	<br><br>
 	<br><br>
-	<u><%= link_to "SIGN UP AS CLINIC", clinic_sign_up_view_path %></u>
+	<%= link_to "SIGN UP AS VENDOR", vendor_sign_up_view_path, {:style=>"color:white", class:"loginVendor"} %>
 	<br><br>
-	<br><br>
-	<u><%= link_to "LOG IN AS VENDOR", vendor_log_in_view_path %></u>
-	<br><br>
-	<br><br>
-	<u><%= link_to "SIGN UP AS VENDOR", vendor_sign_up_view_path %></u>
-	<br><br>
-	<br><br>
+	</div>
 </div>
