@@ -1,10 +1,24 @@
 <p id="notice" style="text-align: center"><%= notice %></p>
 
 <div class="catalog_catagory">
+	<div class="category_sort">
 	<%= link_to image_tag("xray.jpg", class: "catagory_img"), catalog_path(:category_id => 1) %>
+	<h2>X-ray</h2>
+	</div>
+
+	<div class="category_sort">
 	<%= link_to image_tag("mri.jpg", class: "catagory_img"), catalog_path(:category_id => 2) %>
+	<h2>MRI</h2>
+	</div>
+
+	<div class="category_sort">
 	<%= link_to image_tag("hearthealth.jpg", class: "catagory_img"), catalog_path(:category_id => 3) %>
+	<h2>Heart Health</h2> 
+	</div>
+	<div class="category_sort">
 	<%= link_to image_tag("ultrasound.jpg", class: "catagory_img"), catalog_path(:category_id => 4) %>
+	<h2>Ultrasound</h2>
+	</div>
 </div>
 <!-- Container for the Catalog Content -->
 <div class="Catalog_page">

@@ -26,11 +26,24 @@
 
 }
 
+.category_sort {
+	width: auto;
+	height: auto;
+	padding: 10px;
+	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+	border-radius: 25px;
+}
+
 .catalog_products {
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: 2%;
 
+}
+
+.catalog_catagory h2 {
+	font-size: 20px;
+	font-family: Tahoma;
 }
 	//Flexbox products
 	.product_item
@@ -117,13 +130,15 @@ h1 {
 {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	margin-left: 25%;
 	margin-right: 25%;
 }
 
 .catagory_img
 {
+	justify-content: space-between;
 	max-width: 150px;
 	max-height: 100px;
+
 }
